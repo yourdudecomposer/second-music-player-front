@@ -1,0 +1,19 @@
+.button{
+    border-radius: 50%;
+    position: relative;
+
+    &::after{
+        width: 50%;
+        height: 50%;
+        content: '';
+        background-color: var(--controls-not-active);
+        position: absolute;
+    }
+
+    svg{
+        width: 80px;
+        height: 80px;
+        fill: var(--play-pause);
+        z-index: 1;
+    }
+}

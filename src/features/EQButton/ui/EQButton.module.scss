@@ -1,0 +1,12 @@
+.button{
+    svg{
+        width: 30px;
+        fill: var(--controls-not-active);
+        
+        &.active{
+            fill: var(--controls-active);
+
+        }
+    }
+}
+

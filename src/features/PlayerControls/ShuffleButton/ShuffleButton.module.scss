@@ -1,0 +1,10 @@
+.shuffle{
+    svg{
+        stroke: var(--controls-not-active);
+
+        path:nth-child(3),
+        path:nth-child(5){
+            fill:  var(--controls-not-active);
+        }
+    }
+}

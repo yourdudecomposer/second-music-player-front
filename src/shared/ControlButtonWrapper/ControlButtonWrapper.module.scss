@@ -1,0 +1,18 @@
+.button{
+    background-color: transparent;
+    border:none;
+    max-width: fit-content;
+    max-height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .1s;
+
+    &:active{
+        transform: scale(.9);
+
+    }
+
+    cursor: pointer;
+  
+}

@@ -1,0 +1,34 @@
+.wrapper {
+    height: 100dvh;
+    transition: height .1s linear;
+    width: 100%;
+    padding: 35px;
+    background-color: var(--background-player);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -12px 20px 0 var(--player-text-color);
+
+    .image_wrapper{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        max-width: 422px;
+        max-height: 422px;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    
+
+    .description {
+        display: none;
+
+        @media screen and (width >= 768px) {
+            display: initial;
+        }
+    }
+}
