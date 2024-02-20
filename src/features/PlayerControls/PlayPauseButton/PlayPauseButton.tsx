@@ -11,6 +11,8 @@ interface PlayPauseButtonProps {
 }
 
 export function PlayPauseButton({ className }: PlayPauseButtonProps) {
+    console.log('play button render');
+
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
     return (
         <ControlButtonWrapper onClick={() => setIsPlaying(!isPlaying)} className={cls.button}>

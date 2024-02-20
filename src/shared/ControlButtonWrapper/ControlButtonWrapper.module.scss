@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform .1s;
+    transition: transform .05s;
 
     &:active{
         transform: scale(.9);

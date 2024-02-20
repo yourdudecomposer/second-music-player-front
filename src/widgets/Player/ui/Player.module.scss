@@ -9,7 +9,6 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 1;
     box-shadow: 0 -12px 20px 0 var(--player-text-color);
 
     .image_wrapper{
@@ -20,6 +19,10 @@
         max-height: 422px;
         border-radius: 15px;
         overflow: hidden;
+
+        img{
+            object-fit: cover;
+        }
     }
 
     

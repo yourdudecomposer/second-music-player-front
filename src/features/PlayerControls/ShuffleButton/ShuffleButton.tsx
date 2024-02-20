@@ -12,7 +12,7 @@ interface ShuffleButtonProps {
 
 export function ShuffleButton({ className }: ShuffleButtonProps) {
     return (
-        <ControlButtonWrapper onClick={() => console.log(12)} className={cls.shuffle}>
+        <ControlButtonWrapper className={cls.shuffle}>
             <Shuffle />
         </ControlButtonWrapper>
     );

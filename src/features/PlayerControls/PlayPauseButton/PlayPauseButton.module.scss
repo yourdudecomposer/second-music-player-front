@@ -1,6 +1,7 @@
 .button{
     border-radius: 50%;
     position: relative;
+    z-index: 0;
 
     &::after{
         width: 50%;

@@ -3,7 +3,6 @@ import { PlayPauseButton } from '../PlayPauseButton/PlayPauseButton';
 import { PrevButton } from '../PrevButton/PrevButton';
 import { RepeatButton } from '../RepeatButton/RepeatButton';
 import { ShuffleButton } from '../ShuffleButton/ShuffleButton';
-import { TimeLine } from '../../TimeLine/ui/TimeLine';
 import cls from './PlayerControls.module.scss';
 
 interface PlayerControlsProps {

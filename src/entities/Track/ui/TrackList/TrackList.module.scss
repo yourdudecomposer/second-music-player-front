@@ -1,3 +1,10 @@
 .wrapper {
-     display: none;
+    // display: none;
+    height: 100dvh;
+    transition: height .1s linear;
+    top: 0;
+    position: fixed;
+    overflow-x: auto;
+    width: 100%;
+
 }
