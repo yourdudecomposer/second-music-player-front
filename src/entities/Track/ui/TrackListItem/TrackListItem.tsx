@@ -1,22 +1,21 @@
-'use client';
-
 import Image from 'next/image';
 import Typography from '@/shared/Typography/Typography';
-import { useTracksStore } from '@/store/tracksStore';
+import { CSSProperties, FC } from 'react';
 import cls from './TrackListItem.module.scss';
 
-interface TrackListItemProps {
+interface TrackListItemProps{
     title: string
     description: string
     cover:string
+    style?:CSSProperties
 }
 
-export function TrackListItem({ title, description, cover }: TrackListItemProps) {
-    const { currentTrack, setCurrentTrack, tracks } = useTracksStore();
-    console.log(tracks, currentTrack);
+export function TrackListItem({
+    title, description, cover, style,
+}: TrackListItemProps) {
     return (
-        <div className={cls.wrapper}>
-            <div onClick={() => setCurrentTrack(2)} className={cls.image}>
+        <div style={style} className={cls.wrapper}>
+            <div onClick={() => {}} className={cls.image}>
                 <Image fill src={cover} alt="" />
             </div>
             <div className={cls.text}>

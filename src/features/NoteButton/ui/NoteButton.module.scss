@@ -4,3 +4,9 @@
         width: 30px;
     }
 }
+
+.active{
+    svg{
+        fill: var(--controls-active);
+    }
+}

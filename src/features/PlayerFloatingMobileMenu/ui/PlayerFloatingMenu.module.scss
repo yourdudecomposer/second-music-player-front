@@ -8,3 +8,17 @@
     align-items: center;
     border-radius: 50px;
 }
+
+.fixed{
+    position: fixed;
+    bottom: 35px;
+    z-index: 1;
+}
+
+.placeholder{
+    display: none;
+}
+
+.placeholder_visible{
+    display: block;
+}

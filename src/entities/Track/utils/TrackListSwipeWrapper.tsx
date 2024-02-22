@@ -1,16 +1,9 @@
 'use client';
 
 import { usePlayerStore } from '@/store/PlayerStore';
-import clsx from 'clsx';
 import { useState } from 'react';
-import cls from './TrackList.module.scss';
-import { TrackListItem } from '../TrackListItem/TrackListItem';
 
-interface TrackListProps {
-    className?:string
-}
-
-export function TrackList({ className }: TrackListProps) {
+export function TrackListSwipeWrapper({ children }) {
     const { isTrackListVisible, setIsTrackListVisible } = usePlayerStore();
 
     const [touchStart, setTouchStart] = useState(null);
@@ -33,18 +26,16 @@ export function TrackList({ className }: TrackListProps) {
         const isRightSwipe = distance < -minSwipeDistance;
         if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right');
         // add your conditional logic here
-        if (isRightSwipe) {
+        if (isLeftSwipe) {
+            setIsTrackListVisible(true);
+        } else if (isRightSwipe) {
             setIsTrackListVisible(false);
         }
     };
 
     return (
-        <div className={clsx(className, cls.wrapper, isTrackListVisible && cls.show_tracklist)}>
-            {
-                usePlayerStore.getState().tracks
-                    .map((el) => <TrackListItem key={el.id} title={el.title} description={el.description} cover={el.cover} />)
-                    .concat(<TrackListItem key={999} style={{ opacity: 0 }} title="" description="" cover="" />)
-            }
+        <div onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+            {children}
         </div>
     );
 }

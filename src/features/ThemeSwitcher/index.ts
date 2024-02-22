@@ -1,2 +1,2 @@
-export { ThemeContext, ThemeProvider } from './ThemeProvider/ThemeProvider';
-export { ThemeSwitcher } from './ui/ThemeSwitcher';
+export { ArticleThemeProvider, useArticleTheme } from './ThemeProviders/ArticleThemeProvider/ArticleThemeProvider';
+export { ArticleThemeSwitcher } from './ui/ArticleThemeSwitcher';

@@ -1,15 +1,15 @@
-import { ThemeProvider } from '@/features/ThemeSwitcher';
-import { MainPage } from '@/pages/MainPage';
-import { ITrack } from '@/types';
+import { ArticleThemeProvider } from '@/features/ThemeSwitcher';
+import { Article } from '@/widgets/Article';
 import { Player } from '@/widgets/Player';
 
 export default async function Home() {
     return (
+        <>
+            <Player />
+            <ArticleThemeProvider>
+                <Article />
+            </ArticleThemeProvider>
 
-        <ThemeProvider>
-            <MainPage>
-                <Player />
-            </MainPage>
-        </ThemeProvider>
+        </>
     );
 }

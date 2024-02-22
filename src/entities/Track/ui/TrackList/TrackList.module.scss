@@ -1,10 +1,14 @@
 .wrapper {
-    // display: none;
     height: 100dvh;
-    transition: height .1s linear;
+    transition: height .1s linear, transform .3s ease-in-out;
+    transform: translateX(100%);
     top: 0;
     position: fixed;
     overflow-x: auto;
     width: 100%;
+    background-color: var(--background-player);
+}
 
+.show_tracklist{
+    transform: translateX(0%);
 }

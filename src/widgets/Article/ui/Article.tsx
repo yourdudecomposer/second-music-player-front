@@ -1,6 +1,7 @@
 'use client';
 
 import Typography from '@/shared/Typography/Typography';
+import { ArticleThemeProvider, ArticleThemeSwitcher, useArticleTheme } from '@/features/ThemeSwitcher';
 import cls from './Article.module.scss';
 
 // interface ArticleProps {
@@ -11,10 +12,13 @@ import cls from './Article.module.scss';
 const articleText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sed veniam mollitia quod placeat reiciendis autem natus, non hic id laborum adipisci omnis blanditiis molestias, perspiciatis praesentium consectetur voluptatum sapiente. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sed veniam mollitia quod placeat reiciendis autem natus, non hic id laborum adipisci omnis blanditiis molestias, perspiciatis praesentium consectetur voluptatum sapiente. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sed veniam mollitia quod placeat reiciendis autem natus, non hic id laborum adipisci omnis blanditiis molestias, perspiciatis praesentium consectetur voluptatum sapiente. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sed veniam mollitia quod placeat reiciendis autem natus, non hic id laborum adipisci omnis blanditiis molestias, perspiciatis praesentium consectetur voluptatum sapiente. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sed veniam mollitia quod placeat reiciendis autem natus, non hic id laborum adipisci omnis blanditiis molestias, perspiciatis praesentium consectetur voluptatum sapiente. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sed veniam mollitia quod placeat reiciendis autem natus, non hic id laborum adipisci omnis blanditiis molestias, perspiciatis praesentium consectetur voluptatum sapiente. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sed veniam mollitia quod placeat reiciendis autem natus, non hic id laborum adipisci omnis blanditiis molestias, perspiciatis praesentium consectetur voluptatum sapiente';
 
 export function Article() {
+    const { theme } = useArticleTheme();
+
     console.log('article render');
     return (
-        <div className={`${cls.div}`}>
+        <div className={`${cls.div} ${theme}`}>
             <Typography isPlayerText={false} text={articleText} />
+            <ArticleThemeSwitcher />
         </div>
     );
 }

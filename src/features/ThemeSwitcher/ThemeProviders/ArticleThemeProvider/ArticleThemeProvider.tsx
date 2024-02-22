@@ -1,21 +1,22 @@
 'use client';
 
 import {
-    ReactNode, createContext, useCallback, useMemo, useState,
+    ReactNode, createContext, useCallback, useContext, useMemo, useState,
 } from 'react';
 
 type Theme = 'article_light' | 'article_dark'
 
-// eslint-disable-next-line no-console
+// eslint-disable-next-line
 export const ThemeContext = createContext<{theme: Theme, toggleTheme:()=>void}>({ theme: 'article_light', toggleTheme: () => { } });
 
-export function ThemeProvider({
+export function ArticleThemeProvider({
     children,
 }: {
     children: ReactNode;
   }) {
     const [theme, setTheme] = useState<Theme>('article_dark');
     const toggleTheme = useCallback(() => {
+        console.log(theme);
         setTheme(theme === 'article_dark' ? 'article_light' : 'article_dark');
     }, [theme]);
 
@@ -25,4 +26,9 @@ export function ThemeProvider({
             {children}
         </ThemeContext.Provider>
     );
+}
+
+export function useArticleTheme() {
+    const { theme, toggleTheme } = useContext(ThemeContext);
+    return { theme, toggleTheme };
 }
