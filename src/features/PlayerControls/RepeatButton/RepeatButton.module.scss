@@ -4,3 +4,10 @@
         stroke: var(--controls-not-active);
     }
 }
+
+.active{
+    svg{
+        width: 32px;
+        stroke: var(--controls-active);
+    }
+}

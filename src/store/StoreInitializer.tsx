@@ -12,6 +12,7 @@ export default function StoreInitializer({ tracks }:StoreInitializerProps) {
 
     if (!initialized.current) {
         usePlayerStore.setState({ tracks }); // add tracks to client side store
+        usePlayerStore.setState({ currentTrack: tracks[0] }); // add current tracks to server side store
         initialized.current = true;
     }
     return null;

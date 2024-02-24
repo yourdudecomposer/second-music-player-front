@@ -8,7 +8,11 @@ interface TrackState {
   isTrackListVisible:boolean;
   setIsTrackListVisible:(bool:boolean)=>void;
   isPlaying:boolean;
-   setIsPlaying:(bool:boolean)=>void;
+  setIsPlaying:(bool:boolean)=>void;
+  isShuffle:boolean;
+  setIsShuffle:(bool:boolean)=>void;
+  isRepeat:boolean;
+  setIsRepeat:(bool:boolean)=>void;
 }
 
 export const usePlayerStore = create<TrackState>((set, get) => ({
@@ -26,5 +30,12 @@ export const usePlayerStore = create<TrackState>((set, get) => ({
     setIsPlaying(bool) {
         set({ isPlaying: bool });
     },
-
+    isShuffle: false,
+    setIsShuffle(bool) {
+        set({ isShuffle: bool });
+    },
+    isRepeat: false,
+    setIsRepeat(bool) {
+        set({ isRepeat: bool });
+    },
 }));

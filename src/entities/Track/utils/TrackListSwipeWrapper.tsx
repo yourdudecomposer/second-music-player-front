@@ -19,7 +19,8 @@ export function TrackListSwipeWrapper({ children }) {
 
     const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
 
-    const onTouchEnd = () => {
+    const onTouchEnd = (e) => {
+        if (e.target.id === 'range2') return;
         if (!touchStart || !touchEnd) return;
         const distance = touchStart - touchEnd;
         const isLeftSwipe = distance > minSwipeDistance;

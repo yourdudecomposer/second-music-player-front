@@ -1,9 +1,8 @@
-'use client';
-
 import { ReactComponent as Pause } from '@/shared/icons/pause.svg';
 import { ReactComponent as Play } from '@/shared/icons/play.svg';
 import { ControlButtonWrapper } from '@/shared/ControlButtonWrapper/ControlButtonWrapper';
 import { usePlayerStore } from '@/store/PlayerStore';
+import { useTrack } from '@/entities/Track';
 import cls from './PlayPauseButton.module.scss';
 
 interface PlayPauseButtonProps {
@@ -11,11 +10,17 @@ interface PlayPauseButtonProps {
 }
 
 export function PlayPauseButton({ className }: PlayPauseButtonProps) {
-    console.log('play button render');
-
     const { isPlaying, setIsPlaying } = usePlayerStore();
+
+    const play = () => {
+        if (isPlaying) {
+            setIsPlaying(false);
+        } else {
+            setIsPlaying(true);
+        }
+    };
     return (
-        <ControlButtonWrapper onClick={() => setIsPlaying(!isPlaying)} className={cls.button}>
+        <ControlButtonWrapper onClick={play} className={cls.button}>
             {isPlaying ? <Pause /> : <Play />}
         </ControlButtonWrapper>
     );

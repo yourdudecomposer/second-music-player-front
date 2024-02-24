@@ -1,0 +1,58 @@
+
+  
+/* range 2 */
+.range_input {
+    appearance: none; 
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 6px;
+    background: var(--controls-not-active);
+
+
+}
+  
+.range_input::-webkit-slider-thumb {
+    appearance: none; 
+    height: 15px;
+    width: 15px;
+    background-color: #f50;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+  
+.range_input::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #f50;
+    border-radius: 50%;
+    border: none;
+    transition: .2s ease-in-out;
+}
+  
+.range_input::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 10px rgb(255 85 0 / 10%)
+}
+
+.range_input:active::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgb(255 85 0 / 20%)
+}
+
+.range_input:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 13px rgb(255 85 0 / 20%)
+}
+  
+.range_input::-moz-range-thumb:hover {
+    box-shadow: 0 0 0 10px rgb(255 85 0 / 10%)
+}
+
+.range_input:active::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgb(255 85 0 / 20%)
+}
+
+.range_input:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 13px rgb(255 85 0 / 20%)    
+}
+  
