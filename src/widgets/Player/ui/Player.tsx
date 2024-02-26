@@ -11,7 +11,7 @@ import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 
 export async function Player() {
-    const data = await fetch('http://192.168.56.22:3000/tracks');
+    const data = await fetch('http://192.168.227.22:3000/tracks');
     const tracks:ITrack[] = await data.json();
 
     usePlayerStore.setState({ tracks }); // add tracks to server side store to get it on server components
@@ -28,7 +28,7 @@ export async function Player() {
                 <TypographyContent />
                 <TimeLine />
                 <PlayerControls />
-                {/* <PlayerFloatingMenu /> */}
+                <PlayerFloatingMenu />
                 <TrackList />
             </div>
         </TrackListSwipeWrapper>

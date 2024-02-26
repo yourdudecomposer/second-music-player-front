@@ -1,25 +1,29 @@
 'use client';
 
 import { usePlayerStore } from '@/store/PlayerStore';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
+
+let musicPlayer: HTMLAudioElement | undefined;
 
 export const usePlayer = () => {
-    const musicPlayers = useRef<HTMLAudioElement | undefined>(typeof Audio !== 'undefined' ? new Audio('') : undefined);
+    if (!musicPlayer) {
+        musicPlayer = typeof Audio !== 'undefined' ? new Audio('') : undefined;
+    }
     const { isPlaying, currentTrack } = usePlayerStore();
-
     useEffect(() => {
-        if (musicPlayers.current) {
-            musicPlayers.current.src = currentTrack?.audio || '';
+        if (musicPlayer) {
+            musicPlayer.src = currentTrack?.audio || '';
         }
     }, [currentTrack]);
 
     useEffect(() => {
-        if (musicPlayers.current) {
+        if (musicPlayer) {
             if (isPlaying && currentTrack) {
-                musicPlayers.current.play();
+                musicPlayer.play();
             } else {
-                musicPlayers.current.pause();
+                musicPlayer.pause();
             }
         }
     }, [isPlaying, currentTrack]);
+    return musicPlayer;
 };

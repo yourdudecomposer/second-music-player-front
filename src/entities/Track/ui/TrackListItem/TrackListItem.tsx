@@ -2,20 +2,22 @@ import Image from 'next/image';
 import Typography from '@/shared/Typography/Typography';
 import { CSSProperties, FC } from 'react';
 import cls from './TrackListItem.module.scss';
+import { Bars } from '../Bars/Bars';
 
 interface TrackListItemProps{
     title: string
     description: string
     cover:string
+    isTrackPlaying?:boolean
     style?:CSSProperties
 }
 
 export function TrackListItem({
-    title, description, cover, style,
+    title, description, cover, isTrackPlaying, style,
 }: TrackListItemProps) {
     return (
         <div style={style} className={cls.wrapper}>
-            <div onClick={() => {}} className={cls.image}>
+            <div className={cls.image}>
                 <Image fill src={cover} alt="" />
             </div>
             <div className={cls.text}>
@@ -23,6 +25,7 @@ export function TrackListItem({
                 <Typography isPlayerText text={description} />
 
             </div>
+            {isTrackPlaying && <Bars />}
         </div>
     );
 }

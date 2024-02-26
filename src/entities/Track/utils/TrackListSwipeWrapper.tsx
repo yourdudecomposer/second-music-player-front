@@ -1,10 +1,10 @@
 'use client';
 
 import { usePlayerStore } from '@/store/PlayerStore';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 
-export function TrackListSwipeWrapper({ children }) {
-    const { isTrackListVisible, setIsTrackListVisible } = usePlayerStore();
+export function TrackListSwipeWrapper({ children }:{children:ReactNode}) {
+    const { setIsTrackListVisible } = usePlayerStore();
 
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);

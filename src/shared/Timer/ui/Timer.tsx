@@ -11,7 +11,7 @@ export function Timer({ time, className }: TimerProps) {
 
         <div className={cls.wrapper}>
 
-            <Typography text={time} />
+            <Typography isPlayerText text={time} />
         </div>
     );
 }

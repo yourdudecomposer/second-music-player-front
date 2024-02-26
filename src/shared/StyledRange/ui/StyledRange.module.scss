@@ -5,54 +5,62 @@
     appearance: none; 
     width: 100%;
     cursor: pointer;
-    outline: none;
+
+    // outline: none;
     border-radius: 15px;
     height: 6px;
     background: var(--controls-not-active);
 
-
 }
-  
+
+
+
 .range_input::-webkit-slider-thumb {
+    display: none;
     appearance: none; 
     height: 15px;
     width: 15px;
-    background-color: #f50;
+    background-color: var(--controls-active);
     border-radius: 50%;
     border: none;
     transition: .2s ease-in-out;
+    
 }
   
 .range_input::-moz-range-thumb {
+    display: none;
     height: 15px;
     width: 15px;
-    background-color: #f50;
+    background-color: var(--controls-active);
     border-radius: 50%;
     border: none;
     transition: .2s ease-in-out;
+    
 }
-  
-.range_input::-webkit-slider-thumb:hover {
-    box-shadow: 0 0 0 10px rgb(255 85 0 / 10%)
+
+
+
+.range_input:hover::-webkit-slider-thumb{
+    display: block;
 }
 
 .range_input:active::-webkit-slider-thumb {
-    box-shadow: 0 0 0 13px rgb(255 85 0 / 20%)
+    display: block;
 }
 
 .range_input:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 13px rgb(255 85 0 / 20%)
+    display: block;
 }
   
-.range_input::-moz-range-thumb:hover {
-    box-shadow: 0 0 0 10px rgb(255 85 0 / 10%)
+.range_input:hover ::-moz-range-thumb{
+    display: block;
 }
 
 .range_input:active::-moz-range-thumb {
-    box-shadow: 0 0 0 13px rgb(255 85 0 / 20%)
+    display: block;
 }
 
 .range_input:focus::-moz-range-thumb {
-    box-shadow: 0 0 0 13px rgb(255 85 0 / 20%)    
+    display: block;
 }
   

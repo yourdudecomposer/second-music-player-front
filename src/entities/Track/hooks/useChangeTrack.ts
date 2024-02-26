@@ -12,8 +12,10 @@ export const useChangeTrack = () => {
     });
     function changeTrack(direction:'prev'|'next'):void {
         if (direction === 'prev') {
+            if (indexOfCurrentTrack === 0) return;
             setCurrentTrack(tracks[indexOfCurrentTrack - 1].id);
         } else {
+            if (indexOfCurrentTrack === tracks.length - 1) return;
             setCurrentTrack(tracks[indexOfCurrentTrack + 1].id);
         }
     }
