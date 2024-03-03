@@ -2,7 +2,6 @@ import { ReactComponent as Pause } from '@/shared/icons/pause.svg';
 import { ReactComponent as Play } from '@/shared/icons/play.svg';
 import { ControlButtonWrapper } from '@/shared/ControlButtonWrapper/ControlButtonWrapper';
 import { usePlayerStore } from '@/store/PlayerStore';
-import { useTrack } from '@/entities/Track';
 import cls from './PlayPauseButton.module.scss';
 
 interface PlayPauseButtonProps {

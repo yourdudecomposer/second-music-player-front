@@ -12,9 +12,11 @@ interface ShowTrackListButtonProps {
 
 export function ShowTrackListButton({ className }: ShowTrackListButtonProps) {
     const { setIsTrackListVisible, isTrackListVisible } = usePlayerStore();
-
+    const clickHandler = () => {
+        setIsTrackListVisible(!isTrackListVisible);
+    };
     return (
-        <ControlButtonWrapper onClick={() => setIsTrackListVisible(true)} className={clsx(cls.button, isTrackListVisible && cls.active)}>
+        <ControlButtonWrapper onClick={clickHandler} className={clsx(cls.button, isTrackListVisible && cls.active)}>
             <List />
         </ControlButtonWrapper>
     );

@@ -41,7 +41,7 @@ export function TrackList({ className }: TrackListProps) {
         <div className={clsx(className, cls.wrapper, isTrackListVisible && cls.show_tracklist)}>
             {
                 usePlayerStore.getState().tracks
-                    .map((el) => <TrackListItem isTrackPlaying={currentTrack?.id === el.id} key={el.id} title={el.title} description={el.description} cover={el.cover} />)
+                    .map((el) => <TrackListItem isTrackPlaying={currentTrack?.id === el.id} key={el.id} title={el.title} description={el.description} cover={el.cover} id={el.id} />)
                     .concat(<TrackListItem key={999} style={{ opacity: 0 }} title="" description="" cover="" />)
             }
         </div>

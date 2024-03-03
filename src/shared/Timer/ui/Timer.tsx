@@ -1,4 +1,5 @@
 import Typography from '@/shared/Typography/Typography';
+import { memo } from 'react';
 import cls from './Timer.module.scss';
 
 interface TimerProps {
@@ -6,12 +7,10 @@ interface TimerProps {
     className?:string
 }
 
-export function Timer({ time, className }: TimerProps) {
-    return (
+export const Timer = memo(({ time, className }: TimerProps) => (
 
-        <div className={cls.wrapper}>
+    <div className={cls.wrapper}>
 
-            <Typography isPlayerText text={time} />
-        </div>
-    );
-}
+        <Typography isPlayerText text={time} />
+    </div>
+));

@@ -11,12 +11,26 @@
 
     span {
         width: 3px;
-        height: 100%;
         background-color: var(--player-bars);
         border-radius: 3px;
         transform-origin: bottom;
-        animation: bounce 2.2s ease infinite alternate;
         content: '';
+        transform: scaleY(0.7); 
+        
+        &:nth-of-type(2) {
+            transform: scaleY(1); 
+        }
+
+        &:nth-of-type(3) {
+            transform: scaleY(0.5); 
+        }
+    }
+}
+
+.animation{
+    /* stylelint-disable-next-line no-descending-specificity */
+    span {
+        animation: bounce 2.2s ease infinite alternate;
 
         &:nth-of-type(2) {
             animation-delay: -2.2s; /* Start at the end of animation */
@@ -25,7 +39,9 @@
         &:nth-of-type(3) {
             animation-delay: -3.7s; /* Start mid-way of return of animation */
         }
+    
     }
+    
 }
 
 @keyframes bounce {

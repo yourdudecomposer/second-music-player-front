@@ -1,7 +1,6 @@
 'use client';
 
 import { Timer } from '@/shared/Timer';
-import clsx from 'clsx';
 import { StyledRange } from '@/shared/StyledRange';
 import { usePlayer } from '@/entities/Track';
 import {

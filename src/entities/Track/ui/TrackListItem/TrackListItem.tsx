@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Typography from '@/shared/Typography/Typography';
-import { CSSProperties, FC } from 'react';
+import { CSSProperties } from 'react';
+import { usePlayerStore } from '@/store/PlayerStore';
 import cls from './TrackListItem.module.scss';
 import { Bars } from '../Bars/Bars';
 
@@ -8,15 +9,36 @@ interface TrackListItemProps{
     title: string
     description: string
     cover:string
+    id?:string
     isTrackPlaying?:boolean
     style?:CSSProperties
 }
 
 export function TrackListItem({
-    title, description, cover, isTrackPlaying, style,
+    title, description, cover, id, isTrackPlaying, style,
 }: TrackListItemProps) {
+    const {
+        isPlaying,
+        setIsPlaying,
+        currentTrack,
+        setCurrentTrack,
+    } = usePlayerStore();
+    const playPause = () => {
+        if (isPlaying) {
+            setIsPlaying(false);
+        } else {
+            setIsPlaying(true);
+        }
+    };
+    const clickHandler = () => {
+        if (title === currentTrack?.title) {
+            playPause();
+        } else {
+            setCurrentTrack(id);
+        }
+    };
     return (
-        <div style={style} className={cls.wrapper}>
+        <but onClick={clickHandler} style={style} className={cls.wrapper}>
             <div className={cls.image}>
                 <Image fill src={cover} alt="" />
             </div>
@@ -26,6 +48,6 @@ export function TrackListItem({
 
             </div>
             {isTrackPlaying && <Bars />}
-        </div>
+        </but>
     );
 }
