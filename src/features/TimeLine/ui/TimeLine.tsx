@@ -2,12 +2,12 @@
 
 import { Timer } from '@/shared/Timer';
 import { StyledRange } from '@/shared/StyledRange';
-import { usePlayer } from '@/entities/Track';
 import {
     ChangeEvent, useEffect, useMemo, useState,
 } from 'react';
 import { timeFormat } from '@/shared/utils/timeFormat/timeFormat';
 import { usePlayerStore } from '@/store/PlayerStore';
+import { useAudioContext } from '@/shared/AudioContextProvider/AudioContextProvider';
 import cls from './TimeLine.module.scss';
 
 interface TimeLineProps {
@@ -15,8 +15,8 @@ interface TimeLineProps {
 }
 
 export function TimeLine({ className }: TimeLineProps) {
-    const player = usePlayer();
     const { isPlaying } = usePlayerStore();
+    const player = useAudioContext();
     const [currentTime, setCurrentTime] = useState<string>(timeFormat(player?.currentTime || 0));
 
     useEffect(() => {
@@ -34,7 +34,6 @@ export function TimeLine({ className }: TimeLineProps) {
         if (player?.currentTime) {
             player.currentTime = +e.target.value;
         }
-        console.log(e.target.value);
     };
 
     return (

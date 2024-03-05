@@ -1,7 +1,7 @@
 'use client';
 
 import Typography from '@/shared/Typography/Typography';
-import { ArticleThemeProvider, ArticleThemeSwitcher, useArticleTheme } from '@/features/ThemeSwitcher';
+import { ArticleThemeSwitcher, useArticleTheme } from '@/features/ThemeSwitcher';
 import cls from './Article.module.scss';
 
 // interface ArticleProps {
@@ -14,7 +14,6 @@ const articleText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. C
 export function Article() {
     const { theme } = useArticleTheme();
 
-    console.log('article render');
     return (
         <div className={`${cls.div} ${theme}`}>
             <Typography isPlayerText={false} text={articleText} />

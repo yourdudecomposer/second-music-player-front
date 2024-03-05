@@ -1,4 +1,5 @@
 import { ITrack } from '@/types';
+import { useRef } from 'react';
 import { create } from 'zustand';
 
 interface TrackState {
@@ -13,6 +14,8 @@ interface TrackState {
   setIsShuffle:(bool:boolean)=>void;
   isRepeat:boolean;
   setIsRepeat:(bool:boolean)=>void;
+  player:HTMLAudioElement | null
+  setPlayer:(ref: HTMLAudioElement | null)=>void
 }
 
 export const usePlayerStore = create<TrackState>((set, get) => ({
@@ -37,5 +40,9 @@ export const usePlayerStore = create<TrackState>((set, get) => ({
     isRepeat: false,
     setIsRepeat(bool) {
         set({ isRepeat: bool });
+    },
+    player: null,
+    setPlayer(ref) {
+        set({ player: ref });
     },
 }));

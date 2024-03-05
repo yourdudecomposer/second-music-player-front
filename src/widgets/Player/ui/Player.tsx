@@ -7,6 +7,7 @@ import { TimeLine } from '@/features/TimeLine';
 import { usePlayerStore } from '@/store/PlayerStore';
 import StoreInitializer from '@/store/StoreInitializer';
 import clsx from 'clsx';
+import { AudioContextProvider } from '@/shared/AudioContextProvider';
 import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 
@@ -19,18 +20,21 @@ export async function Player() {
 
     return (
         <TrackListSwipeWrapper>
-            <div className={clsx(cls.wrapper, 'player_purple')}>
+            <AudioContextProvider>
 
-                <StoreInitializer tracks={tracks} />
-                <div className={cls.image_wrapper}>
-                    <Image fill src="/cover_url_1.jpg" alt="" />
+                <div className={clsx(cls.wrapper, 'player_purple')}>
+
+                    <StoreInitializer tracks={tracks} />
+                    <div className={cls.image_wrapper}>
+                        <Image fill src="/cover_url_1.jpg" alt="" />
+                    </div>
+                    <TypographyContent />
+                    <TimeLine />
+                    <PlayerControls />
+                    <PlayerFloatingMenu />
+                    <TrackList />
                 </div>
-                <TypographyContent />
-                <TimeLine />
-                <PlayerControls />
-                <PlayerFloatingMenu />
-                <TrackList />
-            </div>
+            </AudioContextProvider>
         </TrackListSwipeWrapper>
 
     );

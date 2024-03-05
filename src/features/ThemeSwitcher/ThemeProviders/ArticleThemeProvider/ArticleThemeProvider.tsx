@@ -16,7 +16,6 @@ export function ArticleThemeProvider({
   }) {
     const [theme, setTheme] = useState<Theme>('article_dark');
     const toggleTheme = useCallback(() => {
-        console.log(theme);
         setTheme(theme === 'article_dark' ? 'article_light' : 'article_dark');
     }, [theme]);
 

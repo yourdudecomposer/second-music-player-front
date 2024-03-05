@@ -35,10 +35,11 @@ export function TrackListItem({
             playPause();
         } else {
             setCurrentTrack(id);
+            setIsPlaying(true);
         }
     };
     return (
-        <but onClick={clickHandler} style={style} className={cls.wrapper}>
+        <div onClick={clickHandler} style={style} className={cls.wrapper}>
             <div className={cls.image}>
                 <Image fill src={cover} alt="" />
             </div>
@@ -48,6 +49,6 @@ export function TrackListItem({
 
             </div>
             {isTrackPlaying && <Bars />}
-        </but>
+        </div>
     );
 }

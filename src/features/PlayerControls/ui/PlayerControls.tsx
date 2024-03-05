@@ -1,6 +1,5 @@
 'use client';
 
-import { usePlayer } from '@/entities/Track';
 import { NextButton } from '../NextButton/NextButton';
 import { PlayPauseButton } from '../PlayPauseButton/PlayPauseButton';
 import { PrevButton } from '../PrevButton/PrevButton';
@@ -13,8 +12,6 @@ interface PlayerControlsProps {
 }
 
 export function PlayerControls({ className }: PlayerControlsProps) {
-    usePlayer();
-
     return (
         <div className={`${className} ${cls.wrapper}`}>
             <ShuffleButton />
