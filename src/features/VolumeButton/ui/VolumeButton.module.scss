@@ -4,3 +4,12 @@
         stroke: var(--controls-not-active);
     }
 }
+
+.active{
+    svg{
+        width: 30px;
+        stroke: var(--controls-active);
+        fill: var(--controls-active);
+        transform: translateX(-15%);
+    }
+}

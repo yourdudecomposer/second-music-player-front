@@ -1,8 +1,19 @@
 .wrapper {
+    --player-padding:35px;
+
+    @media screen and (width >= 768px) {
+        --player-padding:70px;
+    }
+    
+    @media screen and (width >= 1024px) {
+        --player-padding:35px;
+
+    }
+
     height: 100dvh;
     transition: height .1s linear;
     width: 100%;
-    padding: 35px;
+    padding: var(--player-padding);
     background-color: var(--background-player);
     display: flex;
     flex-direction: column;
@@ -11,19 +22,63 @@
     position: relative;
     box-shadow: 0 -12px 20px 0 var(--player-text-color);
 
-    .image_wrapper{
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        position: relative;
-        max-width: 422px;
-        max-height: 422px;
-        border-radius: 15px;
-        overflow: hidden;
 
-        img{
-            object-fit: cover;
+
+    .player_top{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+        @media screen and (width >= 768px) {
+            gap: 20px;
+
+        }
+
+        .image_wrapper{
+            width: 100%;
+            position: relative;
+            aspect-ratio: 1 / 1;
+            max-width: calc(50vh - var(--player-padding));
+            max-height:  calc(50vh - var(--player-padding));
+            border-radius: 15px;
+            overflow: hidden;
+
+      
+
+            img{
+                object-fit: cover;
+            }
         }
     }
 
+    .player_bottom{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+        gap: 20px;
+
+        @media screen and (width >= 768px) {
+            gap: 25px;
+
+            .float_menu{
+                display: none;
+            }
+        
+            .timeline{
+                order: 2;
+            }
+            
+            .controls{
+                order:1 ;
+            
+            }
+        }
+    }
 
 }
+
+

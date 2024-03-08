@@ -1,12 +1,15 @@
 .div{
+    width: 100%;
+    max-width: 304px;
     padding: 16px 32px;
     filter: drop-shadow(0 0 16px var(--floating-menu-shadow));
     background-color: var(--background-player);
     display: flex;
-    gap: 35px;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     border-radius: 50px;
+
 }
 
 .fixed{

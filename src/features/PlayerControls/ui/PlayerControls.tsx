@@ -1,5 +1,9 @@
 'use client';
 
+import { clsx } from 'clsx';
+import { ShowTrackListButton } from '@/features/ShowTrackListButton';
+import { EQButton } from '@/features/EQButton';
+import { VolumeButton } from '@/features/VolumeButton';
 import { NextButton } from '../NextButton/NextButton';
 import { PlayPauseButton } from '../PlayPauseButton/PlayPauseButton';
 import { PrevButton } from '../PrevButton/PrevButton';
@@ -13,12 +17,21 @@ interface PlayerControlsProps {
 
 export function PlayerControls({ className }: PlayerControlsProps) {
     return (
-        <div className={`${className} ${cls.wrapper}`}>
-            <ShuffleButton />
-            <PrevButton />
-            <PlayPauseButton />
-            <NextButton />
-            <RepeatButton />
+        <div className={clsx(className, cls.wrapper)}>
+            <div className={clsx(cls.left_wrapper)}>
+                <ShowTrackListButton className={cls.tracklist_btn} />
+            </div>
+            <div className={clsx(cls.center_wrapper)}>
+                <ShuffleButton />
+                <PrevButton />
+                <PlayPauseButton />
+                <NextButton />
+                <RepeatButton />
+            </div>
+            <div className={clsx(cls.right_wrapper)}>
+                <EQButton className={cls.eq_btn} />
+                <VolumeButton />
+            </div>
         </div>
     );
 }

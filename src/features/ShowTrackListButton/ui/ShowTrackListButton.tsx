@@ -16,7 +16,7 @@ export function ShowTrackListButton({ className }: ShowTrackListButtonProps) {
         setIsTrackListVisible(!isTrackListVisible);
     };
     return (
-        <ControlButtonWrapper onClick={clickHandler} className={clsx(cls.button, isTrackListVisible && cls.active)}>
+        <ControlButtonWrapper onClick={clickHandler} className={clsx(className, cls.button, isTrackListVisible && cls.active)}>
             <List />
         </ControlButtonWrapper>
     );

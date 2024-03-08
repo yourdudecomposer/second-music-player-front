@@ -8,3 +8,5 @@ export interface ITrack{
     createdAt:string
     updatedAt:string
 }
+
+export type RepeatType = 'none'| 'one'| 'all'

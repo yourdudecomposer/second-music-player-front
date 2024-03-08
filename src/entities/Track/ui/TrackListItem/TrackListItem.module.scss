@@ -11,6 +11,12 @@
     border-bottom: 4px solid var(--track-item-border-bottom);
     cursor: pointer;
 
+    @media screen and (width >= 768px) {
+        &:nth-last-child(2){
+            border-bottom: none;
+        }
+    }
+
     .image{
         position: relative;
         width: 100px;

@@ -23,15 +23,18 @@ export async function Player() {
             <AudioContextProvider>
 
                 <div className={clsx(cls.wrapper, 'player_purple')}>
-
                     <StoreInitializer tracks={tracks} />
-                    <div className={cls.image_wrapper}>
-                        <Image fill src="/cover_url_1.jpg" alt="" />
+                    <div className={cls.player_top}>
+                        <div className={cls.image_wrapper}>
+                            <Image fill src="/cover_url_1.jpg" alt="" />
+                        </div>
+                        <TypographyContent />
                     </div>
-                    <TypographyContent />
-                    <TimeLine />
-                    <PlayerControls />
-                    <PlayerFloatingMenu />
+                    <div className={cls.player_bottom}>
+                        <TimeLine className={cls.timeline} />
+                        <PlayerControls className={cls.controls} />
+                        <PlayerFloatingMenu className={cls.float_menu} />
+                    </div>
                     <TrackList />
                 </div>
             </AudioContextProvider>

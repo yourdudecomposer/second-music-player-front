@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Typography from '@/shared/Typography/Typography';
 import { CSSProperties } from 'react';
 import { usePlayerStore } from '@/store/PlayerStore';
+import clsx from 'clsx';
 import cls from './TrackListItem.module.scss';
 import { Bars } from '../Bars/Bars';
 
@@ -12,10 +13,12 @@ interface TrackListItemProps{
     id?:string
     isTrackPlaying?:boolean
     style?:CSSProperties
+    className?:string
+
 }
 
 export function TrackListItem({
-    title, description, cover, id, isTrackPlaying, style,
+    title, description, cover, id, isTrackPlaying, style, className,
 }: TrackListItemProps) {
     const {
         isPlaying,
@@ -39,7 +42,7 @@ export function TrackListItem({
         }
     };
     return (
-        <div onClick={clickHandler} style={style} className={cls.wrapper}>
+        <div onClick={clickHandler} style={style} className={clsx(className, cls.wrapper)}>
             <div className={cls.image}>
                 <Image fill src={cover} alt="" />
             </div>

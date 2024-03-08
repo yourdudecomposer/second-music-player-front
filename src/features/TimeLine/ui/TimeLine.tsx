@@ -8,6 +8,7 @@ import {
 import { timeFormat } from '@/shared/utils/timeFormat/timeFormat';
 import { usePlayerStore } from '@/store/PlayerStore';
 import { useAudioContext } from '@/shared/AudioContextProvider/AudioContextProvider';
+import clsx from 'clsx';
 import cls from './TimeLine.module.scss';
 
 interface TimeLineProps {
@@ -37,7 +38,7 @@ export function TimeLine({ className }: TimeLineProps) {
     };
 
     return (
-        <div className={cls.wrapper}>
+        <div className={clsx(className, cls.wrapper)}>
             <Timer time={currentTime} />
             {/* <div className={`${className} ${cls.out_line}`}>
                 <div className={cls.inner_line} />
