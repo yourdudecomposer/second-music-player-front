@@ -37,6 +37,9 @@ export function TrackList({ className }: TrackListProps) {
     const [opacity, setOpacity] = useState(false);
 
     useEffect(() => {
+        window.addEventListener('mousemove', (e) => { console.log(e); });
+    }, []);
+    useEffect(() => {
         if (isTrackListVisible) {
             disableScroll();
         } else {

@@ -22,7 +22,7 @@ export async function Player() {
         <TrackListSwipeWrapper>
             <AudioContextProvider>
 
-                <div className={clsx(cls.wrapper, 'player_purple')}>
+                <div className={clsx(cls.wrapper)}>
                     <StoreInitializer tracks={tracks} />
                     <div className={cls.player_top}>
                         <div className={cls.image_wrapper}>
@@ -35,6 +35,7 @@ export async function Player() {
                         <PlayerControls className={cls.controls} />
                         <PlayerFloatingMenu className={cls.float_menu} />
                     </div>
+
                     <TrackList />
                 </div>
             </AudioContextProvider>

@@ -25,6 +25,7 @@ export function TrackListItem({
         setIsPlaying,
         currentTrack,
         setCurrentTrack,
+        setIsTrackListVisible,
     } = usePlayerStore();
     const playPause = () => {
         if (isPlaying) {
@@ -39,6 +40,11 @@ export function TrackListItem({
         } else {
             setCurrentTrack(id);
             setIsPlaying(true);
+
+            // нужно ли очищать
+            setTimeout(() => {
+                setIsTrackListVisible(false);
+            }, 100);
         }
     };
     return (

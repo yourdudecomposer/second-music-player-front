@@ -3,14 +3,20 @@
     transition: height .1s linear, transform .3s ease-in-out;
     transform: translateX(100%);
     top: 0;
+    right: 0;
     position: fixed;
-    overflow-x: auto;
+    overflow-y: auto;
     width: 100%;
     background-color: var(--background-player);
     
     @media screen and (width >= 768px) {
-        right: 0;
         width: 70%;
+    }
+    
+    @media screen and (width >= 1024px) {
+        box-shadow: 0 0 45px -30px var(--player-text-color);
+        transform: translateX(0%);
+        width: 30%;
     }
 
    
@@ -28,7 +34,7 @@
 
 .overlay{
     transition: all .3s ease-in-out;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 100%;

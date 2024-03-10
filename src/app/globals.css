@@ -51,8 +51,30 @@ body {
     overflow-x: hidden;
 }
 
-
-
+@media screen and (width >= 1024px) {
+    /* Scroll bar stylings */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+  
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: var(--background-player); 
+    }
+  
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 5px;
+    }
+  
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+    }
+  
+}
 
 /* 
 body {

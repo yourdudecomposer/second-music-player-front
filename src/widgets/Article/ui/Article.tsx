@@ -15,8 +15,8 @@ export function Article() {
     const { theme } = useArticleTheme();
 
     return (
-        <div className={`${cls.div} ${theme}`}>
-            <Typography isPlayerText={false} text={articleText} />
+        <div className={`${cls.wrapper} ${theme}`}>
+            <Typography isPlayerText={false} text={articleText + articleText + articleText} />
             <ArticleThemeSwitcher />
         </div>
     );

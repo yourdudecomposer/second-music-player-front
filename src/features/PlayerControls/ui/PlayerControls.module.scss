@@ -17,6 +17,11 @@
         flex-direction: row;
         align-items: center;
         max-width: 390px;
+
+        @media screen and (width >= 1024px) {
+            transform: scale(.8);
+
+        }
     }
     
     .left_wrapper{
@@ -27,12 +32,16 @@
         }
 
         @media screen and (width >= 768px) {
-            display: block;
+            width: 22px;
         }
         
         .tracklist_btn{
+            @media screen and (width >= 1024px) {
+                display: none;
+            }
+
             svg{
-                width: 27px;
+                width: 22px;
             }
         }
     }
@@ -51,6 +60,12 @@
         @media screen and (width >= 768px) {
             display: flex;
             align-items: center;
+            transform: scale(.8);
+        }
+
+        @media screen and (width >= 1024px) {
+            transform: scale(.7);
+
         }
     }
 }

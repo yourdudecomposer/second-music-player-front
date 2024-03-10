@@ -77,8 +77,19 @@
             
             }
         }
+
+        @media screen and (width >= 1024px) {
+            gap: 10px;
+
+        }
+
     }
 
+    .tracklist{
+        @media screen and (width >= 1024px) {
+            display: none;
+        }
+    }
 }
 
 
