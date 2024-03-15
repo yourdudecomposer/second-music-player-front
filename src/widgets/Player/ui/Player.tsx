@@ -7,7 +7,7 @@ import { TimeLine } from '@/features/TimeLine';
 import { usePlayerStore } from '@/store/PlayerStore';
 import StoreInitializer from '@/store/StoreInitializer';
 import clsx from 'clsx';
-import { AudioContextProvider } from '@/shared/AudioContextProvider';
+import { AudioContextProvider } from '@/entities/PlayerRef';
 import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 

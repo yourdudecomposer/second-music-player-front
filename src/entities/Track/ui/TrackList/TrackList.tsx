@@ -3,19 +3,13 @@
 import { usePlayerStore } from '@/store/PlayerStore';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
+import Typography from '@/shared/Typography/Typography';
 import cls from './TrackList.module.scss';
 import { TrackListItem } from '../TrackListItem/TrackListItem';
 
 interface TrackListProps {
     className?:string
 }
-
-const scrollToUp = (e) => {
-    console.log(e);
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-};
 
 function disableScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -32,13 +26,8 @@ function enableScroll() {
 
 export function TrackList({ className }: TrackListProps) {
     const { isTrackListVisible, setIsTrackListVisible, currentTrack } = usePlayerStore();
-    const [touchStart, setTouchStart] = useState(null);
-    const [touchEnd, setTouchEnd] = useState(null);
     const [opacity, setOpacity] = useState(false);
 
-    useEffect(() => {
-        window.addEventListener('mousemove', (e) => { console.log(e); });
-    }, []);
     useEffect(() => {
         if (isTrackListVisible) {
             disableScroll();
@@ -55,36 +44,26 @@ export function TrackList({ className }: TrackListProps) {
     }, [isTrackListVisible]);
 
     // the required distance between touchStart and touchEnd to be detected as a swipe
-    const minSwipeDistance = 50;
 
-    const onTouchStart = (e) => {
-        setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
-        setTouchStart(e.targetTouches[0].clientX);
-    };
-
-    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
-
-    const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) return;
-        const distance = touchStart - touchEnd;
-        const isLeftSwipe = distance > minSwipeDistance;
-        const isRightSwipe = distance < -minSwipeDistance;
-        if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right');
-        // add your conditional logic here
-        if (isRightSwipe) {
-            setIsTrackListVisible(false);
+    const getList = () => {
+        if (usePlayerStore.getState().tracks.length === 0) {
+            return (
+                <div className={cls.err}>
+                    <Typography isPlayerText text="что-то пошло не так" />
+                </div>
+            );
         }
+
+        return usePlayerStore.getState().tracks
+            .map((el) => <TrackListItem isTrackPlaying={currentTrack?.id === el.id} key={el.id} title={el.title} description={el.description} cover={el.cover} id={el.id} />)
+            .concat(<TrackListItem className={cls.lastElem} key={999} style={{ opacity: 0 }} title="" description="" cover="" />);
     };
 
     return (
         <>
             { isTrackListVisible && <div onClick={() => setIsTrackListVisible(false)} className={clsx(cls.overlay, opacity && cls.opacity)} />}
             <div className={clsx(className, cls.wrapper, isTrackListVisible && cls.show_tracklist)}>
-                {
-                    usePlayerStore.getState().tracks
-                        .map((el) => <TrackListItem isTrackPlaying={currentTrack?.id === el.id} key={el.id} title={el.title} description={el.description} cover={el.cover} id={el.id} />)
-                        .concat(<TrackListItem className={cls.lastElem} key={999} style={{ opacity: 0 }} title="" description="" cover="" />)
-                }
+                {getList()}
             </div>
         </>
     );

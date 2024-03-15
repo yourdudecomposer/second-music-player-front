@@ -12,7 +12,6 @@ interface NextButtonProps {
 
 export function NextButton({ className }: NextButtonProps) {
     const changeTrack = useChangeTrack();
-
     const click = () => {
         changeTrack('next');
     };

@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { ReactComponent as RepeatAll } from '@/shared/icons/repeatAll.svg';
 import { ReactComponent as RepeatOne } from '@/shared/icons/repeatOne.svg';
 import { RepeatType } from '@/types';
+import { useMemo } from 'react';
 import cls from './RepeatButton.module.scss';
 
 interface RepeatButtonProps {
@@ -11,19 +12,6 @@ interface RepeatButtonProps {
 }
 
 const repeatVal:RepeatType[] = ['none', 'all', 'one'];
-
-const renderSvg = (repeat: RepeatType) => {
-    switch (repeat) {
-    case 'none':
-    case 'all':
-        return <RepeatAll />;
-    case 'one':
-        return <RepeatOne />;
-
-    default:
-        return null;
-    }
-};
 
 export function RepeatButton({ className }: RepeatButtonProps) {
     const { repeat, setRepeat } = usePlayerStore();
@@ -39,9 +27,22 @@ export function RepeatButton({ className }: RepeatButtonProps) {
         }
     };
 
+    const Button = useMemo(() => {
+        switch (repeat) {
+        case 'none':
+        case 'all':
+            return <RepeatAll />;
+        case 'one':
+            return <RepeatOne />;
+
+        default:
+            return null;
+        }
+    }, [repeat]);
+
     return (
         <ControlButtonWrapper onClick={handleClick} className={clsx(cls.button, (repeat === 'all' || repeat === 'one') && cls.active)}>
-            {renderSvg(repeat)}
+            {Button}
         </ControlButtonWrapper>
     );
 }

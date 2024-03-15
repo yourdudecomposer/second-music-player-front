@@ -1,9 +1,9 @@
-import { Inter } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Nunito({ weight: ['400', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
     title: 'title',

@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { timeFormat } from '@/shared/utils/timeFormat/timeFormat';
 import { usePlayerStore } from '@/store/PlayerStore';
-import { useAudioContext } from '@/shared/AudioContextProvider/AudioContextProvider';
+import { useAudioContext } from '@/entities/PlayerRef';
 import clsx from 'clsx';
 import cls from './TimeLine.module.scss';
 

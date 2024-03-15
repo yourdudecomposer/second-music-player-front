@@ -20,6 +20,7 @@ export function PlayerFloatingMenu({ className }: PlayerFloatingMenuProps) {
     const { isTrackListVisible } = usePlayerStore();
 
     useEffect(() => {
+        console.log(isTrackListVisible);
         if (isTrackListVisible) {
             setIsTrackListGoing(false);
         } else {
@@ -45,7 +46,7 @@ export function PlayerFloatingMenu({ className }: PlayerFloatingMenuProps) {
             </div>
             <div
                 style={{ height: placeholderHeight || '' }}
-                className={clsx((isTrackListVisible || !isTrackListGoing) ? cls.placeholder_visible : cls.placeholder)}
+                className={clsx((isTrackListVisible || !isTrackListGoing) ? cls.placeholder_visible : cls.placeholder, cls.placeholder_none)}
             />
         </>
     );

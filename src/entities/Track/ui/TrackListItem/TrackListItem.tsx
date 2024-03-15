@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Typography from '@/shared/Typography/Typography';
 import { CSSProperties } from 'react';
@@ -53,8 +55,8 @@ export function TrackListItem({
                 <Image fill src={cover} alt="" />
             </div>
             <div className={cls.text}>
-                <Typography as="h3" isPlayerText text={title} />
-                <Typography isPlayerText text={description} />
+                <Typography as="h3" isPlayerText className={cls.title} text={title} />
+                <Typography isPlayerText className={cls.description} text={description} />
 
             </div>
             {isTrackPlaying && <Bars />}

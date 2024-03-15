@@ -25,3 +25,9 @@
 .placeholder_visible{
     display: block;
 }
+    
+@media screen and (width >= 768px) {
+    .placeholder_none{
+        display: none;
+    }
+}

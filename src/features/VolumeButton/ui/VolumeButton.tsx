@@ -1,5 +1,5 @@
 import { ControlButtonWrapper } from '@/shared/ControlButtonWrapper/ControlButtonWrapper';
-import { useAudioContext } from '@/shared/AudioContextProvider/AudioContextProvider';
+import { useAudioContext } from '@/entities/PlayerRef';
 import { ReactComponent as VolumeOn } from '@/shared/icons/volumeOn.svg';
 import { ReactComponent as VolumeOff } from '@/shared/icons/volumeOff.svg';
 import { useState } from 'react';
