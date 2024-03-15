@@ -12,7 +12,7 @@ import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 
 export async function Player() {
-    const data = await fetch(`${process.env.HOST}/tracks`);
+    const data = await fetch(`${process.env.VERCEL_URL}/tracks`);
     const tracks:ITrack[] = await data.json();
 
     usePlayerStore.setState({ tracks }); // add tracks to server side store to get it on server components
