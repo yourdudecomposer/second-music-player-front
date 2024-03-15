@@ -10,7 +10,7 @@
 
 import { ITrack } from '@/types';
 
-const mockData:ITrack[] = [
+export const mockData:ITrack[] = [
     {
         id: 1,
         title: 'title 1',

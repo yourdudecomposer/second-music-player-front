@@ -1,4 +1,3 @@
-import { ITrack } from '@/types';
 import { TrackList, TrackListSwipeWrapper } from '@/entities/Track';
 import Image from 'next/image';
 import { PlayerFloatingMenu } from '@/features/PlayerFloatingMobileMenu';
@@ -8,12 +7,12 @@ import { usePlayerStore } from '@/store/PlayerStore';
 import StoreInitializer from '@/store/StoreInitializer';
 import clsx from 'clsx';
 import { AudioContextProvider } from '@/entities/PlayerRef';
+import { mockData } from '@/app/tracks/route';
 import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 
 export async function Player() {
-    const data = await fetch(`${process.env.HOST}/tracks`, { cache: 'no-store' });
-    const tracks:ITrack[] = await data.json();
+    const tracks = [...mockData];
 
     usePlayerStore.setState({ tracks }); // add tracks to server side store to get it on server components
     usePlayerStore.setState({ currentTrack: tracks[0] }); // add tracks to server side store to get it on server components
