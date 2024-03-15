@@ -12,7 +12,7 @@ interface TrackListItemProps{
     title: string
     description: string
     cover:string
-    id?:string
+    id?:number
     isTrackPlaying?:boolean
     style?:CSSProperties
     className?:string
