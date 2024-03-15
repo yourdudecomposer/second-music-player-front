@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { ITrack, RepeatType } from '@/types';
 import { create } from 'zustand';
 
 interface TrackState {
   tracks: ITrack[];
   currentTrack: null | ITrack;
-  setCurrentTrack: (id) => void;
+  setCurrentTrack: (id:number) => void;
   isTrackListVisible:boolean;
   setIsTrackListVisible:(bool:boolean)=>void;
   isPlaying:boolean;

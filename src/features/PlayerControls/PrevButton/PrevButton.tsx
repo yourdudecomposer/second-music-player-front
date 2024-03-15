@@ -3,11 +3,7 @@ import { ControlButtonWrapper } from '@/shared/ControlButtonWrapper/ControlButto
 import { useChangeTrack } from '@/entities/Track';
 import cls from './PrevButton.module.scss';
 
-interface PrevButtonProps {
-    className?:string
-}
-
-export function PrevButton({ className }: PrevButtonProps) {
+export function PrevButton() {
     const changeTrack = useChangeTrack();
     const click = () => {
         changeTrack('prev');

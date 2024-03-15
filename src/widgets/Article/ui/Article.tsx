@@ -16,7 +16,7 @@ export function Article() {
 
     return (
         <div className={`${cls.wrapper} ${theme}`}>
-            <Typography isPlayerText={false} className={cls.article_text} text="Здравствуйте" />
+            <Typography isPlayerText={false} className={cls.article_text} text={articleText} />
             <ArticleThemeSwitcher />
         </div>
     );

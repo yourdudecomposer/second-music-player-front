@@ -9,7 +9,6 @@ interface StyledRangeProps {
     onInput:(e:ChangeEvent<HTMLInputElement>)=>void
     minValue?:number
     maxValue?:number
-    className?:string
 }
 
 export function StyledRange({
@@ -17,7 +16,6 @@ export function StyledRange({
     onInput,
     minValue = 0,
     maxValue = 100,
-    className,
 }: StyledRangeProps) {
     const styleObj = useMemo(() => {
         const progress = (value / maxValue) * 100;

@@ -4,11 +4,7 @@ import Typography from '@/shared/Typography/Typography';
 import { usePlayerStore } from '@/store/PlayerStore';
 import cls from './TypographyContent.module.scss';
 
-interface TypographyContentProps {
-    className?:string
-}
-
-export function TypographyContent({ className }: TypographyContentProps) {
+export function TypographyContent() {
     usePlayerStore(); // иначе стейт не будет обновляться на клиенте
 
     return (

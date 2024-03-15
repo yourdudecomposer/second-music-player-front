@@ -4,10 +4,9 @@ import cls from './Timer.module.scss';
 
 interface TimerProps {
     time:string
-    className?:string
 }
 
-export const Timer = memo(({ time, className }: TimerProps) => (
+export const Timer = memo(({ time }: TimerProps) => (
 
     <div className={cls.wrapper}>
 

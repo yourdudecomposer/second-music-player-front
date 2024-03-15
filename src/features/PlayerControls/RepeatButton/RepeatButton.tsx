@@ -7,13 +7,9 @@ import { RepeatType } from '@/types';
 import { useMemo } from 'react';
 import cls from './RepeatButton.module.scss';
 
-interface RepeatButtonProps {
-    className?: string
-}
-
 const repeatVal:RepeatType[] = ['none', 'all', 'one'];
 
-export function RepeatButton({ className }: RepeatButtonProps) {
+export function RepeatButton() {
     const { repeat, setRepeat } = usePlayerStore();
 
     const handleClick = () => {

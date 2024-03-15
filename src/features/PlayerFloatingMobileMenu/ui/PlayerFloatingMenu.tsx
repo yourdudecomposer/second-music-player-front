@@ -20,7 +20,6 @@ export function PlayerFloatingMenu({ className }: PlayerFloatingMenuProps) {
     const { isTrackListVisible } = usePlayerStore();
 
     useEffect(() => {
-        console.log(isTrackListVisible);
         if (isTrackListVisible) {
             setIsTrackListGoing(false);
         } else {

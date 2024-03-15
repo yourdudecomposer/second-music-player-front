@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 'use client';
 
 import Image from 'next/image';
@@ -12,7 +15,7 @@ interface TrackListItemProps{
     title: string
     description: string
     cover:string
-    id?:number
+    id:number
     isTrackPlaying?:boolean
     style?:CSSProperties
     className?:string

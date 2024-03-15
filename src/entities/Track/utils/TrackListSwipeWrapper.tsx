@@ -12,14 +12,14 @@ export function TrackListSwipeWrapper({ children }:{children:ReactNode}) {
     // the required distance between touchStart and touchEnd to be detected as a swipe
     const minSwipeDistance = 50;
 
-    const onTouchStart = (e) => {
+    const onTouchStart = (e:any) => {
         setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
         setTouchStart(e.targetTouches[0].clientX);
     };
 
-    const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+    const onTouchMove = (e:any) => setTouchEnd(e.targetTouches[0].clientX);
 
-    const onTouchEnd = (e) => {
+    const onTouchEnd = (e:any) => {
         if (e.target.id === 'range2') return;
         if (!touchStart || !touchEnd) return;
         const distance = touchStart - touchEnd;

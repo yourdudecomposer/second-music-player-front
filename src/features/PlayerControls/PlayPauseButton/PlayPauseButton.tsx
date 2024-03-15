@@ -4,11 +4,7 @@ import { ControlButtonWrapper } from '@/shared/ControlButtonWrapper/ControlButto
 import { usePlayerStore } from '@/store/PlayerStore';
 import cls from './PlayPauseButton.module.scss';
 
-interface PlayPauseButtonProps {
-    className?:string
-}
-
-export function PlayPauseButton({ className }: PlayPauseButtonProps) {
+export function PlayPauseButton() {
     const { isPlaying, setIsPlaying } = usePlayerStore();
 
     const play = () => {

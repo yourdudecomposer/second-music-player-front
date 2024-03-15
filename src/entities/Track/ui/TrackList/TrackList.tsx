@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 'use client';
 
 import { usePlayerStore } from '@/store/PlayerStore';
@@ -56,7 +59,7 @@ export function TrackList({ className }: TrackListProps) {
 
         return usePlayerStore.getState().tracks
             .map((el) => <TrackListItem isTrackPlaying={currentTrack?.id === el.id} key={el.id} title={el.title} description={el.description} cover={el.cover} id={el.id} />)
-            .concat(<TrackListItem className={cls.lastElem} key={999} style={{ opacity: 0 }} title="" description="" cover="" />);
+            .concat(<TrackListItem id={999} className={cls.lastElem} key={999} style={{ opacity: 0 }} title="" description="" cover="" />);
     };
 
     return (

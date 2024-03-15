@@ -4,11 +4,7 @@ import clsx from 'clsx';
 import { usePlayerStore } from '@/store/PlayerStore';
 import cls from './NoteButton.module.scss';
 
-interface NoteButtonProps {
-    className?:string
-}
-
-export function NoteButton({ className }: NoteButtonProps) {
+export function NoteButton() {
     const { isTrackListVisible, setIsTrackListVisible } = usePlayerStore();
     return (
         <ControlButtonWrapper onClick={() => { setIsTrackListVisible(false); }} className={clsx(cls.button, !isTrackListVisible && cls.active)}>

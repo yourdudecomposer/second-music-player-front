@@ -1,13 +1,5 @@
-import { FC, SVGProps } from 'react';
-
 /* eslint-disable max-len */
-interface ShuffleProps extends SVGProps<SVGSVGElement>{
-    className?:string
-}
-
-export function Shuffle({
-    className,
-}: ShuffleProps) {
+export function Shuffle() {
     return (
     // не корректный свг
         <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
