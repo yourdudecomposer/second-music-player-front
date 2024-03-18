@@ -28,7 +28,11 @@ export function TimeLine({ className }: TimeLineProps) {
         }
         return () => clearInterval(timerId);
     }, [player?.currentTime, isPlaying]);
-
+    useEffect(() => {
+        if (player?.currentTime === 0) {
+            setCurrentTime(timeFormat(player?.currentTime));
+        }
+    }, [player?.currentTime]);
     const totalTime = useMemo(() => (timeFormat(player?.duration || 0)), [player?.duration]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
