@@ -9,6 +9,14 @@
     position: relative;
 }
 
+.progress{
+    width: 30%;
+    height: 8px;
+    position: absolute;
+    top: 0;left: 0;
+    background: red;
+}
+
 .range_input {
     position: absolute;
     left: 0;

@@ -19,6 +19,7 @@ export function TimeLine({ className }: TimeLineProps) {
     const { isPlaying } = usePlayerStore();
     const player = useAudioContext();
     const [currentTime, setCurrentTime] = useState<string>(timeFormat(player?.currentTime || 0));
+    const [buffered, setBuffered] = useState<number>(0);
 
     useEffect(() => {
         let timerId: ReturnType<typeof setInterval>;
@@ -48,9 +49,8 @@ export function TimeLine({ className }: TimeLineProps) {
       < player.currentTime
                     ) {
                         // eslint-disable-next-line no-console
-                        console.log(`${
-                            (player.buffered.end(player.buffered.length - 1 - i) * 100) / duration
-                        }%`);
+                        setBuffered((player.buffered.end(player.buffered.length - 1 - i) * 100) / duration);
+
                         break;
                     }
                 }
@@ -93,7 +93,7 @@ export function TimeLine({ className }: TimeLineProps) {
             {/* <div className={`${className} ${cls.out_line}`}>
                 <div className={cls.inner_line} />
             </div> */}
-            <StyledRange onInput={handleChange} maxValue={Math.floor(player?.duration || 0)} value={Math.floor(player?.currentTime || 0)} buffered={0} />
+            <StyledRange onInput={handleChange} maxValue={Math.floor(player?.duration || 0)} value={Math.floor(player?.currentTime || 0)} buffered={buffered} />
             <Timer time={totalTime} />
 
         </div>

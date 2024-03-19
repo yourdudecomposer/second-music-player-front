@@ -20,14 +20,16 @@ export function StyledRange({
     minValue = 0,
     maxValue = 100,
 }: StyledRangeProps) {
-    const styleObj = useMemo(() => {
+    const styleObjTime = useMemo(() => {
         const progress = (value / maxValue) * 100;
         return { background: `linear-gradient(to right, #4936CC ${progress}%, transparent ${progress}%)` };
     }, [maxValue, value]);
+    const styleObjBuffer = useMemo(() => ({ width: `${buffered}%` }), [buffered]);
 
     return (
         <div className={cls.wrapper}>
-            <input style={styleObj} type="range" min={minValue} max={maxValue} value={value} onInput={onInput} id="range2" className={cls.range_input} />
+            <div style={styleObjBuffer} className={cls.progress} />
+            <input style={styleObjTime} type="range" min={minValue} max={maxValue} value={value} onInput={onInput} id="range2" className={cls.range_input} />
         </div>
     );
 }
