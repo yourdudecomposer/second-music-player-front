@@ -33,10 +33,31 @@ export function TimeLine({ className }: TimeLineProps) {
             setCurrentTime(timeFormat(player?.currentTime));
         }
     }, [player?.currentTime]);
+
+    const onProgress = useCallback((e: any) => {
+        console.log(e);
+
+        if (player) {
+            const { duration } = player;
+            if (duration > 0) {
+                for (let i = 0; i < player.buffered.length; i++) {
+                    if (
+                        player.buffered.start(player.buffered.length - 1 - i)
+      < player.currentTime
+                    ) {
+                        console.log(`${
+                            (player.buffered.end(player.buffered.length - 1 - i) * 100) / duration
+                        }%`);
+                        break;
+                    }
+                }
+            }
+        }
+    }, [player]);
     useEffect(() => {
-        // eslint-disable-next-line no-console
-        console.log(player?.buffered);
-    }, [player?.buffered]);
+        player?.addEventListener('progress', onProgress);
+        return () => { player?.removeEventListener('progress', onProgress); };
+    }, [onProgress, player]);
     const totalTime = useMemo(() => (timeFormat(player?.duration || 0)), [player?.duration]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
