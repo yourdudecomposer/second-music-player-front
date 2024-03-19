@@ -35,16 +35,19 @@ export function TimeLine({ className }: TimeLineProps) {
     }, [player?.currentTime]);
 
     const onProgress = useCallback((e: any) => {
+        // eslint-disable-next-line no-console
         console.log(e);
 
         if (player) {
             const { duration } = player;
             if (duration > 0) {
+                // eslint-disable-next-line no-plusplus
                 for (let i = 0; i < player.buffered.length; i++) {
                     if (
                         player.buffered.start(player.buffered.length - 1 - i)
       < player.currentTime
                     ) {
+                        // eslint-disable-next-line no-console
                         console.log(`${
                             (player.buffered.end(player.buffered.length - 1 - i) * 100) / duration
                         }%`);
