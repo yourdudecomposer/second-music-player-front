@@ -33,6 +33,10 @@ export function TimeLine({ className }: TimeLineProps) {
             setCurrentTime(timeFormat(player?.currentTime));
         }
     }, [player?.currentTime]);
+    useEffect(() => {
+        // eslint-disable-next-line no-console
+        console.log(player?.buffered);
+    }, [player?.buffered]);
     const totalTime = useMemo(() => (timeFormat(player?.duration || 0)), [player?.duration]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -65,7 +69,7 @@ export function TimeLine({ className }: TimeLineProps) {
             {/* <div className={`${className} ${cls.out_line}`}>
                 <div className={cls.inner_line} />
             </div> */}
-            <StyledRange onInput={handleChange} maxValue={Math.floor(player?.duration || 0)} value={Math.floor(player?.currentTime || 0)} />
+            <StyledRange onInput={handleChange} maxValue={Math.floor(player?.duration || 0)} value={Math.floor(player?.currentTime || 0)} buffered={0} />
             <Timer time={totalTime} />
 
         </div>
