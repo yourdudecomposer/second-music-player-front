@@ -14,7 +14,9 @@
     height: 8px;
     position: absolute;
     top: 0;left: 0;
-    background: red;
+    background: #888; 
+    border-radius: 15px;
+
 }
 
 .range_input {
@@ -35,7 +37,6 @@
 
 
 .range_input::-webkit-slider-thumb {
-    display: none;
     appearance: none; 
     height: 15px;
     width: 15px;
@@ -47,7 +48,6 @@
 }
   
 .range_input::-moz-range-thumb {
-    display: none;
     height: 15px;
     width: 15px;
     background-color: var(--controls-active);
