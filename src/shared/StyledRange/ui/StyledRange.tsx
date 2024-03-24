@@ -1,6 +1,8 @@
 'use client';
 
-import { ChangeEvent, MouseEvent, useMemo } from 'react';
+import {
+    ChangeEvent, MouseEvent, TouchEvent, useMemo,
+} from 'react';
 import cls from './StyledRange.module.scss';
 
 interface StyledRangeProps {
@@ -10,6 +12,8 @@ interface StyledRangeProps {
     onInput:(e:ChangeEvent<HTMLInputElement>)=>void
     // eslint-disable-next-line no-unused-vars
     onMouseUp:(e:MouseEvent<HTMLInputElement>)=>void
+    // eslint-disable-next-line no-unused-vars
+    onTouchEnd:(e:TouchEvent<HTMLInputElement>)=>void
     minValue?:number
     maxValue?:number
 }
@@ -20,6 +24,7 @@ export function StyledRange({
     buffered,
     onInput,
     onMouseUp,
+    onTouchEnd,
     minValue = 0,
     maxValue = 100,
 }: StyledRangeProps) {
@@ -32,7 +37,18 @@ export function StyledRange({
     return (
         <div className={cls.wrapper}>
             <div style={styleObjBuffer} className={cls.progress} />
-            <input onMouseUp={onMouseUp} style={styleObjTime} type="range" min={minValue} max={maxValue} value={value} onInput={onInput} id="range2" className={cls.range_input} />
+            <input
+                onTouchEnd={onTouchEnd}
+                onMouseUp={onMouseUp}
+                style={styleObjTime}
+                type="range"
+                min={minValue}
+                max={maxValue}
+                value={value}
+                onInput={onInput}
+                id="range2"
+                className={cls.range_input}
+            />
         </div>
     );
 }

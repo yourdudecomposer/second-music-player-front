@@ -37,7 +37,9 @@ export function TimeLine({ className }: TimeLineProps) {
             setValue(+e.target.value);
         }
     };
-
+    useEffect(() => {
+        console.log(isRewinding);
+    }, [isRewinding]);
     useEffect(() => {
         if (player && isRewinding) {
             player.currentTime = value;
@@ -71,7 +73,7 @@ export function TimeLine({ className }: TimeLineProps) {
             <div className={clsx(className, cls.wrapper)}>
 
                 <Timer className={cls.tablet_timer} time={currentTimerTime} />
-                <StyledRange onMouseUp={mouseUpHandler} onInput={handleChange} maxValue={Math.floor(player?.duration || 0)} value={value} buffered={buffered} />
+                <StyledRange onTouchEnd={mouseUpHandler} onMouseUp={mouseUpHandler} onInput={handleChange} maxValue={Math.floor(player?.duration || 0)} value={value} buffered={buffered} />
                 <Timer className={cls.tablet_timer} time={totalTime} />
 
             </div>
