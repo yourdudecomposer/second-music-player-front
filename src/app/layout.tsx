@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Player } from '@/widgets/Player';
 import clsx from 'clsx';
+import { ArticleThemeProvider } from '@/features/ThemeSwitcher';
 
 const inter = Nunito({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({
             <body className={`${inter.className}`}>
                 <div className={clsx('player_wrapper', 'player_purple')}>
                     <Player />
-                    {children}
+                    <ArticleThemeProvider>
+                        {children}
+                    </ArticleThemeProvider>
                 </div>
             </body>
         </html>

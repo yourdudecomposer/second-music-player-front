@@ -31,7 +31,7 @@ export function StyledRange({
     const styleObjTime = useMemo(() => {
         if (value === 0) return {};
         const progress = (value / maxValue) * 100;
-        return { background: `linear-gradient(to right, #4936CC ${progress + 0.2}%, transparent ${progress}%)` };
+        return { background: `linear-gradient(to right, #4936CC calc(${progress}% + 8px), transparent ${progress}%)` };
     }, [maxValue, value]);
     const styleObjBuffer = useMemo(() => ({ width: `${buffered}%` }), [buffered]);
 

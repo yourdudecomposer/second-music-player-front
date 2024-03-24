@@ -1,0 +1,13 @@
+
+.article_text{
+    font-size: 20px;
+        
+    @media screen and (width >= 768px) {
+        font-size: 24px;
+        
+    }
+    
+    @media screen and (width >= 1024px) {
+        font-size: 20px;
+    }
+}

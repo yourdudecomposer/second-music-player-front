@@ -3,7 +3,7 @@ import cls from './Typography.module.scss';
 type TagType = 'h1' | 'h2' | 'h3' | 'p' | 'span'
 interface TypographyProps {
     text:string
-    isPlayerText: boolean
+    isPlayerText?: boolean
     as?:TagType
     className?:string
 }
