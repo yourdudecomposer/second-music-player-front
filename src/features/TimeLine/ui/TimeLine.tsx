@@ -50,7 +50,7 @@ export function TimeLine({ className }: TimeLineProps) {
     useEffect(() => {
         let id:ReturnType<typeof setInterval>;
         if (player && !isRewinding) {
-            if (player?.currentTime === 0) {
+            if (player?.currentTime < 0.5) {
                 return () => { setValue(player?.currentTime); };
             }
             id = setInterval(() => {
