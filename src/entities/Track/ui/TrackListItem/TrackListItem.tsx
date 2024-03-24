@@ -8,6 +8,7 @@ import Typography from '@/shared/Typography/Typography';
 import { CSSProperties } from 'react';
 import { usePlayerStore } from '@/store/PlayerStore';
 import clsx from 'clsx';
+import { useAudioContext } from '@/entities/PlayerRef';
 import cls from './TrackListItem.module.scss';
 import { Bars } from '../Bars/Bars';
 
@@ -32,6 +33,8 @@ export function TrackListItem({
         setCurrentTrack,
         setIsTrackListVisible,
     } = usePlayerStore();
+    const player = useAudioContext();
+
     const playPause = () => {
         if (isPlaying) {
             setIsPlaying(false);
@@ -44,6 +47,9 @@ export function TrackListItem({
             playPause();
         } else {
             setCurrentTrack(id);
+            if (player?.currentTime) {
+                player.currentTime = 0;
+            }
             setIsPlaying(true);
 
             // нужно ли очищать

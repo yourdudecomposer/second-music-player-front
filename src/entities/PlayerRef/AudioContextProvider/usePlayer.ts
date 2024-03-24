@@ -1,22 +1,30 @@
 'use client';
 
-import { useChangeTrack } from '@/entities/Track';
 import { usePlayerStore } from '@/store/PlayerStore';
-import { useCallback, useEffect, useRef } from 'react';
+import {
+    useCallback, useEffect, useMemo, useRef,
+} from 'react';
 
 export const usePlayer = () => {
     const musicPlayerRef = useRef<HTMLAudioElement | null>(null);
     const {
-        isPlaying, currentTrack, repeat,
+        isPlaying, currentTrack, repeat, setCurrentTrack, tracks,
     } = usePlayerStore();
-    const changeTrack = useChangeTrack();
+    const indexOfCurrentTrack = useMemo(() => tracks.findIndex((el) => {
+        if (el.id === currentTrack?.id) {
+            return true;
+        }
+        return false;
+    }), [currentTrack?.id, tracks]);
     const trackEndHandler = useCallback(() => {
         if (repeat === 'one') {
             musicPlayerRef.current?.play();
-        } else {
-            changeTrack('next');
+        } else if (indexOfCurrentTrack < tracks.length - 1) { // if current track NOT last
+            setCurrentTrack(tracks[indexOfCurrentTrack + 1].id);
+        } else if (repeat === 'all') {
+            setCurrentTrack(tracks[0].id);
         }
-    }, [changeTrack, repeat]);
+    }, [indexOfCurrentTrack, repeat, setCurrentTrack, tracks]);
 
     useEffect(() => {
         if (!musicPlayerRef.current) {
