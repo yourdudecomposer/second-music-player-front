@@ -29,7 +29,7 @@ export function StyledRange({
     maxValue = 100,
 }: StyledRangeProps) {
     const styleObjTime = useMemo(() => {
-        console.log(value);
+        if (value === 0) return {};
         const progress = (value / maxValue) * 100;
         return { background: `linear-gradient(to right, #4936CC ${progress + 0.2}%, transparent ${progress}%)` };
     }, [maxValue, value]);

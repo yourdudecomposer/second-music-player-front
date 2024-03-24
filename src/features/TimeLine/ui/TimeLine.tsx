@@ -37,9 +37,7 @@ export function TimeLine({ className }: TimeLineProps) {
             setValue(+e.target.value);
         }
     };
-    useEffect(() => {
-        console.log(isRewinding);
-    }, [isRewinding]);
+
     useEffect(() => {
         if (player && isRewinding) {
             player.currentTime = value;
@@ -48,11 +46,14 @@ export function TimeLine({ className }: TimeLineProps) {
     }, [isRewinding, player, setCurrentTimerTime, value]);
 
     useEffect(() => {
+        if (player && player.currentTime === 0) {
+            setValue(player?.currentTime);
+        }
+    }, [player, player?.currentTime]);
+
+    useEffect(() => {
         let id:ReturnType<typeof setInterval>;
         if (player && !isRewinding) {
-            if (player?.currentTime < 0.5) {
-                return () => { setValue(player?.currentTime); };
-            }
             id = setInterval(() => {
                 setValue(player?.currentTime);
             }, 1000);
