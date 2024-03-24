@@ -7,12 +7,12 @@ export const useCurrentTime = () => {
     const player = useAudioContext();
     const { isPlaying } = usePlayerStore();
 
-    const [currentTime, setCurrentTime] = useState<string>(timeFormat(player?.currentTime || 0));
+    const [currentTimerTime, setCurrentTimerTime] = useState<string>(timeFormat(player?.currentTime || 0));
 
     useEffect(() => {
         let timerId: ReturnType<typeof setInterval>;
         if (isPlaying) {
-            timerId = setInterval(() => setCurrentTime(timeFormat(player?.currentTime || 0)), 1000);
+            timerId = setInterval(() => setCurrentTimerTime(timeFormat(player?.currentTime || 0)), 1000);
             return () => clearInterval(timerId);
         }
         return () => clearInterval(timerId);
@@ -20,9 +20,9 @@ export const useCurrentTime = () => {
 
     useEffect(() => {
         if (player?.currentTime === 0) {
-            setCurrentTime(timeFormat(player?.currentTime));
+            setCurrentTimerTime(timeFormat(player?.currentTime));
         }
     }, [player?.currentTime]);
 
-    return currentTime;
+    return { currentTimerTime, setCurrentTimerTime };
 };
