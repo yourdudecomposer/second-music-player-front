@@ -24,20 +24,41 @@ export function TimeLine({ className }: TimeLineProps) {
     useRewind();
     const buffered = useBuffered();
     const { currentTimerTime, setCurrentTimerTime } = useCurrentTime();
+    const [isRewinding, setIsRewinding] = useState(false);
 
     const totalTime = useMemo(() => (timeFormat(player?.duration || 0)), [player?.duration]);
 
+    const mouseUpHandler = () => {
+        setIsRewinding(false);
+    };
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+        setIsRewinding(true);
         if (player) {
             setValue(+e.target.value);
         }
     };
+
     useEffect(() => {
-        if (player) {
+        if (player && isRewinding) {
             player.currentTime = value;
             setCurrentTimerTime(timeFormat(value));
         }
-    }, [player, setCurrentTimerTime, value]);
+    }, [isRewinding, player, setCurrentTimerTime, value]);
+
+    useEffect(() => {
+        let id:ReturnType<typeof setInterval>;
+        if (player && !isRewinding) {
+            if (player?.currentTime === 0) {
+                return () => { setValue(player?.currentTime); };
+            }
+            id = setInterval(() => {
+                setValue(player?.currentTime);
+            }, 1000);
+        }
+        return () => {
+            clearInterval(id);
+        };
+    }, [isRewinding, player, player?.currentTime]);
     return (
         <>
             <div className={cls.mobile_timer}>
@@ -50,8 +71,8 @@ export function TimeLine({ className }: TimeLineProps) {
             <div className={clsx(className, cls.wrapper)}>
 
                 <Timer className={cls.tablet_timer} time={currentTimerTime} />
-                <StyledRange onInput={handleChange} maxValue={Math.floor(player?.duration || 0)} value={value} buffered={buffered} />
-                <Timer className={cls.tablet_timer} time={currentTimerTime} />
+                <StyledRange onMouseUp={mouseUpHandler} onInput={handleChange} maxValue={Math.floor(player?.duration || 0)} value={value} buffered={buffered} />
+                <Timer className={cls.tablet_timer} time={totalTime} />
 
             </div>
         </>

@@ -51,6 +51,16 @@ body {
     overflow-x: hidden;
 }
 
+.player_wrapper{
+    @media screen and (width >= 1024px) {
+        width: 70%;
+        height: 100vh;
+        overflow-y: scroll;
+      
+    
+    }
+}
+
 @media screen and (width >= 1024px) {
     /* Scroll bar stylings */
     ::-webkit-scrollbar {
