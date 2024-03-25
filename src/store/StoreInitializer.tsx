@@ -12,15 +12,16 @@ export default function StoreInitializer({ tracks }:StoreInitializerProps) {
     const initialized = useRef(false);
     const { setCurrentTrack, tracks: tracksClient } = usePlayerStore();
     const { get: getQuery } = useSearchParams();
-    const trackId = getQuery('trackId') || 1;
+    const trackId = getQuery('trackId');
     useEffect(() => {
-        if (+trackId > 0 && +trackId < tracksClient.length) {
-            setCurrentTrack(+trackId);
-        } else {
-            setCurrentTrack(1);
+        if (trackId) {
+            if (+trackId > 0 && +trackId < tracksClient.length) {
+                setCurrentTrack(+trackId);
+            }
         }
     }, [setCurrentTrack, trackId, tracksClient.length]);
     if (!initialized.current) {
+        usePlayerStore.setState({ currentTrack: tracks[0] });
         usePlayerStore.setState({ tracks }); // add tracks to client side store
         initialized.current = true;
     }

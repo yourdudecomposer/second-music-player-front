@@ -21,7 +21,9 @@ export function SearchParamsChanger() {
     );
 
     useEffect(() => {
-        router.push(`${pathname}?${createQueryString('trackId', currentTrack?.id.toString() || '')}`, { scroll: false });
-    }, [createQueryString, currentTrack, pathname, router]);
+        if (currentTrack?.id) {
+            router.replace(`${pathname}?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
+        }
+    }, [createQueryString, currentTrack?.id, pathname, router]);
     return null;
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import {
-    ChangeEvent, MouseEvent, TouchEvent, useMemo,
+    ChangeEvent, MouseEvent, TouchEvent, useEffect, useMemo, useState,
 } from 'react';
 import cls from './StyledRange.module.scss';
 
@@ -28,13 +28,21 @@ export function StyledRange({
     minValue = 0,
     maxValue = 100,
 }: StyledRangeProps) {
+    const [progress, setProgress] = useState(0);
+
     const styleObjTime = useMemo(() => {
         if (value === 0) return {};
-        const progress = (value / maxValue) * 100;
-        return { background: `linear-gradient(to right, #4936CC calc(${progress}% + 8px), transparent ${progress}%)` };
-    }, [maxValue, value]);
+        setProgress((value / maxValue) * 100);
+        return { background: `linear-gradient(to right, #4936CC calc(${progress}%), transparent ${progress}%)` };
+    }, [maxValue, progress, value]);
     const styleObjBuffer = useMemo(() => ({ width: `${buffered}%` }), [buffered]);
-
+    useEffect(() => {
+        const slider = document.getElementById('range2');
+        const transform = `${progress}%`;
+        if (slider) {
+            slider.style.setProperty('--transform', transform);
+        }
+    }, [progress]);
     return (
         <div className={cls.wrapper}>
             <div style={styleObjBuffer} className={cls.progress} />

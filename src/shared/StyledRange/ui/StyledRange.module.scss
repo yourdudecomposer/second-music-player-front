@@ -40,6 +40,9 @@
     appearance: none; 
     height: 15px;
     width: 15px;
+    position: relative;
+    right: 8px;
+    transform: translateX(var(--transform));
     background-color: var(--controls-active);
     border-radius: 50%;
     border: none;
@@ -50,6 +53,9 @@
 .range_input::-moz-range-thumb {
     height: 15px;
     width: 15px;
+    position: relative;
+    right: 8px;
+    transform: translateX(var(--transform));
     background-color: var(--controls-active);
     border-radius: 50%;
     border: none;
