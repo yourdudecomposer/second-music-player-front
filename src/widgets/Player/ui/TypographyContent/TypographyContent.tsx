@@ -9,7 +9,6 @@ import { TypographyContentLoader } from './TypographyContentLoader';
 export function TypographyContent() {
     const { currentTrack } = usePlayerStore();
     const [isHydratingDone, setIsHydratingDone] = useState(false);
-
     useEffect(() => {
         setIsHydratingDone(true);
     }, []);

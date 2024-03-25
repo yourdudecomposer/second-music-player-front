@@ -4,7 +4,8 @@
     border-radius: 15px;
     overflow: hidden;
     max-width: calc(50vh - var(--player-padding));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    @media screen and (width >= 1024px) {
-    }
 }

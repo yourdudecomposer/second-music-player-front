@@ -52,6 +52,5 @@ export const usePlayer = () => {
             }
         }
     }, [isPlaying, currentTrack]);
-    console.dir(musicPlayerRef.current);
     return musicPlayerRef.current;
 };

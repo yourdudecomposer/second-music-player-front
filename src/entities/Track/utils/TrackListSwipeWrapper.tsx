@@ -25,7 +25,6 @@ export function TrackListSwipeWrapper({ children }:{children:ReactNode}) {
         const distance = touchStart - touchEnd;
         const isLeftSwipe = distance > minSwipeDistance;
         const isRightSwipe = distance < -minSwipeDistance;
-        if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right');
         // add your conditional logic here
         if (isLeftSwipe) {
             setIsTrackListVisible(true);

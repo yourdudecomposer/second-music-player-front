@@ -18,12 +18,14 @@ function disableScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
+    // eslint-disable-next-line func-names
     window.onscroll = function () {
         window.scrollTo(scrollLeft, scrollTop);
     };
 }
 
 function enableScroll() {
+    // eslint-disable-next-line func-names
     window.onscroll = function () {};
 }
 

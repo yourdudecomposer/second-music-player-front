@@ -8,6 +8,6 @@ interface SkeletonProps {
 export function Skeleton({ className }: SkeletonProps) {
     return (
 
-        <div className={cls.skeleton} />
+        <div className={clsx(cls.skeleton, className)} />
     );
 }

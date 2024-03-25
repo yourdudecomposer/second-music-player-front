@@ -8,6 +8,7 @@ import StoreInitializer from '@/store/StoreInitializer';
 import clsx from 'clsx';
 import { AudioContextProvider } from '@/entities/PlayerRef';
 import { Suspense } from 'react';
+import { SearchParamsChanger } from '@/features/SearchParamsChanger';
 import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 
@@ -143,6 +144,7 @@ export async function Player() {
             <AudioContextProvider>
                 <div className={clsx(cls.wrapper)}>
                     <StoreInitializer tracks={tracks} />
+                    <SearchParamsChanger />
                     <div className={cls.player_top}>
                         <div className={cls.image_wrapper}>
                             {/* eslint-disable-next-line max-len */}

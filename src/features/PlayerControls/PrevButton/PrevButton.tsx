@@ -26,7 +26,6 @@ export function PrevButton() {
     };
 
     useEffect(() => () => {
-        console.log('unmount');
         if (timer.current) {
             clearTimeout(timer.current);
         }
