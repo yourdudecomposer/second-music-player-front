@@ -9,7 +9,7 @@ interface TypographyProps {
 }
 
 export default function Typography({
-    text, as: CustomTag = 'p', className, isPlayerText = false,
+    text = '', as: CustomTag = 'p', className, isPlayerText = false,
 }: TypographyProps) {
     return (
 

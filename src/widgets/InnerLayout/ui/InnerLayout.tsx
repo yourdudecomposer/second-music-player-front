@@ -2,15 +2,15 @@
 
 import { ArticleThemeSwitcher, useArticleTheme } from '@/features/ThemeSwitcher';
 import { ReactNode } from 'react';
-import cls from './ArticleWrapper.module.scss';
+import cls from './InnerLayout.module.scss';
 
-interface ArticleProps {
+interface InnerLayoutProps {
     children:ReactNode
 }
 
 // eslint-disable-next-line max-len
 
-export function ArticleWrapper({ children }:ArticleProps) {
+export function InnerLayout({ children }:InnerLayoutProps) {
     const { theme } = useArticleTheme();
     return (
         <div className={`${cls.wrapper} ${theme}`}>

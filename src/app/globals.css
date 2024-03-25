@@ -60,6 +60,7 @@ body {
     
     }
 }
+ul { list-style-type: none; }
 
 @media screen and (width >= 1024px) {
     /* Scroll bar stylings */

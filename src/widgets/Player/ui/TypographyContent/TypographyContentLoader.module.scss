@@ -1,0 +1,10 @@
+.wrapper{
+    width: 100%;
+    aspect-ratio: 3/1;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: calc(50vh - var(--player-padding));
+
+    @media screen and (width >= 1024px) {
+    }
+}
