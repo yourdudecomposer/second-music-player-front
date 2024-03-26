@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import Typography from '@/shared/Typography/Typography';
+import clsx from 'clsx';
 import cls from './Article.module.scss';
 
 const text = {
@@ -17,7 +18,7 @@ export function Article({ className }: ArticleProps) {
     return (
         <div className={className}>
             <Typography className={cls.title} text="Welcome" />
-            <div className={cls.text}>
+            <div className={clsx(cls.text, 'plain_text_size')}>
                 {/* eslint-disable-next-line max-len */}
                 <Typography text={text.parOne} />
                 <Typography text={text.parTwo} />
