@@ -1,19 +1,23 @@
 'use client';
 
+import { ControlButtonWrapper } from '@/shared/ControlButtonWrapper/ControlButtonWrapper';
+import { ReactComponent as Sun } from '@/shared/icons/sun.svg';
+import { ReactComponent as Moon } from '@/shared/icons/moon.svg';
+import clsx from 'clsx';
 import cls from './ArticleThemeSwitcher.module.scss';
 import { useArticleTheme } from '../ThemeProviders/ArticleThemeProvider/ArticleThemeProvider';
 
 export function ArticleThemeSwitcher() {
-    const { toggleTheme } = useArticleTheme();
+    const { toggleTheme, theme } = useArticleTheme();
     return (
-        <button
-            type="button"
+
+        <ControlButtonWrapper
             onClick={() => {
                 toggleTheme();
             }}
-            className={`${cls.div}`}
+            className={clsx(cls.button, theme === 'article_light' && cls.smaller)}
         >
-            i am article theme switcher
-        </button>
+            {theme === 'article_dark' ? <Sun /> : <Moon />}
+        </ControlButtonWrapper>
     );
 }

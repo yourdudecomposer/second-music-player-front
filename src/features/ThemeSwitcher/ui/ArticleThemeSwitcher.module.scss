@@ -1,7 +1,19 @@
-.div{
-    bottom: 0;
+.button{
+    position: absolute;
+    top: 0;
     right: 0;
-    width: 100px;
-    height: 100px;
-    background-color: green;
+    
+    svg{
+        width: 40px;
+        height: 40px;
+        fill: var( --article-text-color);
+        stroke:  var( --article-text-color);
+    }
+}
+
+.smaller{
+    top: 4px;
+    right: 4px;
+    width: 28px;
+    height: 28px;
 }

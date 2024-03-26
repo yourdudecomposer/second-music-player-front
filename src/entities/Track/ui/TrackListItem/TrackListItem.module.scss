@@ -21,8 +21,8 @@
         position: relative;
         width: 100px;
         height: 100px;
-        border-radius: 15px;
-        border: solid black;
+        border-radius: 10px;
+        overflow: hidden;
         flex-shrink: 0;
 
         img{

@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { PlayerFloatingMenu } from '@/features/PlayerFloatingMobileMenu';
 import { PlayerControls } from '@/features/PlayerControls';
 import { TimeLine } from '@/features/TimeLine';
-import { usePlayerStore } from '@/store/PlayerStore';
 import StoreInitializer from '@/store/StoreInitializer';
 import clsx from 'clsx';
 import { AudioContextProvider } from '@/entities/PlayerRef';
@@ -136,15 +135,13 @@ export async function Player() {
         },
     ];
 
-    usePlayerStore.setState({ tracks }); // add tracks to server side store to get it on server components
-    usePlayerStore.setState({ currentTrack: tracks[0] }); // add tracks to server side store to get it on server components
-
     return (
         <TrackListSwipeWrapper>
             <AudioContextProvider>
                 <div className={clsx(cls.wrapper)}>
                     <StoreInitializer tracks={tracks} />
                     <SearchParamsChanger />
+
                     <div className={cls.player_top}>
                         <div className={cls.image_wrapper}>
                             {/* eslint-disable-next-line max-len */}
