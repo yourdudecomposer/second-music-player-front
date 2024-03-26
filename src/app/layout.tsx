@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import { Player } from '@/widgets/Player';
 import clsx from 'clsx';
 import { ArticleThemeProvider } from '@/features/ThemeSwitcher';
-import { InnerLayout } from '@/widgets/InnerLayout';
+import { InnerLayout } from '@/app/_InnerLayout';
 
 const inter = Nunito({ weight: ['400', '700'], subsets: ['latin'] });
 

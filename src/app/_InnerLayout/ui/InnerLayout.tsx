@@ -1,7 +1,8 @@
 'use client';
 
-import { ArticleThemeSwitcher, useArticleTheme } from '@/features/ThemeSwitcher';
+import { useArticleTheme } from '@/features/ThemeSwitcher';
 import { ReactNode } from 'react';
+import { NavBar } from '@/widgets/NavBar';
 import cls from './InnerLayout.module.scss';
 
 interface InnerLayoutProps {
@@ -15,7 +16,7 @@ export function InnerLayout({ children }:InnerLayoutProps) {
     return (
         <div className={`${cls.wrapper} ${theme}`}>
             {children}
-            <ArticleThemeSwitcher />
+            <NavBar />
         </div>
     );
 }
