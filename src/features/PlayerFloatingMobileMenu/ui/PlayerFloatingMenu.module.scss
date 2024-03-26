@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 295px;
     padding: 14px 28px;
-    filter: drop-shadow(0 0 16px var(--floating-menu-shadow));
+    box-shadow: 0 0 26px var(--floating-menu-shadow);
     background-color: var(--background-player);
     display: flex;
     flex-direction: row;

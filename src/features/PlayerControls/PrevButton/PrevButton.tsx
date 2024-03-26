@@ -22,6 +22,8 @@ export function PrevButton() {
                 }, 2000);
                 setIsTimerRun(true);
             }
+        } else {
+            changeTrack('prev');
         }
     };
 
