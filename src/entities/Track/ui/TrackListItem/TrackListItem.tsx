@@ -66,7 +66,6 @@ export function TrackListItem({
             <div className={cls.text}>
                 <Typography as="h3" isPlayerText className={cls.title} text={title} />
                 <Typography isPlayerText className="plain_text_size" text={description} />
-
             </div>
             {isTrackPlaying && <Bars />}
         </div>
