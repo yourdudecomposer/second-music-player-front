@@ -1,15 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { ITrack } from '@/types';
+import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { usePlayerStore } from './PlayerStore';
 
-interface StoreInitializerProps {
-    tracks:ITrack[]
-}
-export default function StoreInitializer({ tracks }:StoreInitializerProps) {
-    const initialized = useRef(false);
+export default function StoreInitializer() {
     const { setCurrentTrack, tracks: tracksClient } = usePlayerStore();
     const { get: getQuery } = useSearchParams();
     const trackId = getQuery('trackId');
@@ -20,10 +15,6 @@ export default function StoreInitializer({ tracks }:StoreInitializerProps) {
             }
         }
     }, [setCurrentTrack, trackId, tracksClient.length]);
-    if (!initialized.current) {
-        usePlayerStore.setState({ currentTrack: tracks[0] });
-        usePlayerStore.setState({ tracks }); // add tracks to client side store
-        initialized.current = true;
-    }
+
     return null;
 }

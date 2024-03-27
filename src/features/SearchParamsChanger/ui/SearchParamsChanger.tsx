@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 
 export function SearchParamsChanger() {
-    const { currentTrack } = usePlayerStore();
+    const { currentTrack, setCurrentTrack } = usePlayerStore();
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -20,6 +20,12 @@ export function SearchParamsChanger() {
         [searchParams],
     );
 
+    useEffect(() => {
+        const id = searchParams.get('trackId');
+        if (!id) {
+            setCurrentTrack(1);
+        }
+    }, [searchParams, setCurrentTrack]);
     useEffect(() => {
         if (currentTrack?.id) {
             router.replace(`${pathname}?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
