@@ -10,7 +10,7 @@ export function ControlButtonWrapper({
     className, children, ...props
 }: ControlButtonWrapperProps) {
     return (
-        <button type="button" className={`${className} ${cls.button}`} {...props}>
+        <button type="button" className={`${cls.button} ${className} `} {...props}>
             {children}
         </button>
     );

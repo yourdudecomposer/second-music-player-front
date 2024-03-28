@@ -1,10 +1,19 @@
 .page{
     position: relative;
+
+    .settings{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        gap: 10px;
+    }
+
+    .article{
+        margin-bottom: 15px;
+    }
 }
 
-.article{
-    margin-bottom: 15px;
-}
 
 
 

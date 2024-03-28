@@ -1,19 +1,14 @@
 .button{
-    position: absolute;
-    top: 0;
-    right: 0;
-    
+    width: 35px;
+    height: 35px;
+
     svg{
-        width: 40px;
-        height: 40px;
+        width: 100%;
         fill: var( --article-text-color);
         stroke:  var( --article-text-color);
     }
 }
 
 .smaller{
-    top: 6px;
-    right: 6px;
-    width: 28px;
-    height: 28px;
+    padding: 3px;
 }
