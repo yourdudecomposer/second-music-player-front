@@ -85,9 +85,9 @@ export async function Player() {
         },
         {
             id: 8,
-            title: 'title 8 asdf asdf wedf sdva sdv sdfasdf asdfasfd asdfsfd wfdas asdfasdf asdfasdf sadfsadf asdf',
+            title: 'title 8',
             // eslint-disable-next-line max-len
-            description: 'description 8 asdf asdf wedf sdva sdv sdfasdf asdfasfd asdfsfd wfdas asdfasdf asdfasdf sadfsadf asdf asdf asdf wedf sdva sdv sdfasdf asdfasfd asdfsfd wfdas asdfasdf asdfasdf sadfsadf asdf ',
+            description: 'description 8',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
             isActive: true,

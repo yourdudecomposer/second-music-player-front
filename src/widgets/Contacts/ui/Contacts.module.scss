@@ -3,16 +3,33 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: flex-end;
-    cursor: pointer;
+    align-items: flex-start;
 
-    .contact_wrapper{
+    @media screen and (width >= 1024px) {
+        align-items: flex-end;
+
+
+    }
+
+    .mail_link{
+        text-decoration: none;
+        color: var(--article-text-color);
+    }
+
+    .social_wrapper{
         display: flex;
         gap: 10px;
         align-items: center;
+
+        .tg_moving{
+            svg{
+                position: relative;
+                bottom: .6px;
+                right: .6px;
+            }
+        }
+
     }
 
-    svg{
-        width: 40px;
-    }
+
 }
