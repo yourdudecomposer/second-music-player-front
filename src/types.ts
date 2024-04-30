@@ -4,7 +4,10 @@ export interface ITrack{
         en:string
         ru:string
     },
-    description: string,
+    description: {
+        en:string
+        ru:string
+    },
     audio: string,
     cover: string,
     isActive: boolean

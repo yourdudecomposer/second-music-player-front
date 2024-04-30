@@ -4,17 +4,17 @@ import {
     ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState,
 } from 'react';
 
-type Language = 'ru' | 'en'
+type Language = null |'ru' | 'en'
 
 // eslint-disable-next-line
-export const LanguageContext = createContext<{language: Language, toggleLanguage:()=>void}>({ language: 'ru', toggleLanguage: () => { } });
+export const LanguageContext = createContext<{language: Language, toggleLanguage:()=>void}>({ language: null, toggleLanguage: () => { } });
 
 export function LanguageProvider({
     children,
 }: {
     children: ReactNode;
   }) {
-    const [language, setLanguage] = useState<Language>('en');
+    const [language, setLanguage] = useState<Language>(null);
 
     useEffect(() => {
         if (navigator.language.includes('ru')) setLanguage('ru');

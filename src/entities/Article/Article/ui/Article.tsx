@@ -29,6 +29,7 @@ interface ArticleProps {
 
 export function Article({ className }: ArticleProps) {
     const { language } = useLanguage();
+
     const isHydrationDone = useHydration();
     if (!isHydrationDone) {
         return (
@@ -47,10 +48,9 @@ export function Article({ className }: ArticleProps) {
 
             <Typography className={cls.title} text="Welcome" />
             <div className={clsx(cls.text, 'plain_text_size')}>
-                {/* eslint-disable-next-line max-len */}
-                <Typography text={text[language].parOne} />
-                <Typography text={text[language].parTwo} />
-                <Typography text={text[language].parThree} />
+                <Typography text={language ? text[language].parOne : ''} />
+                <Typography text={language ? text[language].parTwo : ''} />
+                <Typography text={language ? text[language].parThree : ''} />
             </div>
         </div>
     );

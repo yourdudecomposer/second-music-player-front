@@ -17,6 +17,11 @@
         }
     }
 
+
+    .text{
+        flex-grow: 1;
+    }
+
     .image{
         position: relative;
         width: 100px;
@@ -42,6 +47,18 @@
         }
     }
 
+    .title_skeleton{
+        display: block;
+        width: 60%;
+        height: 22px;
+        margin-bottom: 10px;
+    }
+
+    .description_skeleton{
+        display: block;
+        width: 80%;
+        height: 22px;
+    }
   
 }
 

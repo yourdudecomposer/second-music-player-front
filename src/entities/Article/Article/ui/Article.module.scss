@@ -15,6 +15,9 @@
 .skeleton_container{
     padding-top: 51px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 
     .skeleton{
         height: 20px;

@@ -2,41 +2,24 @@
 
 import Typography from '@/shared/Typography/Typography';
 import { usePlayerStore } from '@/store/PlayerStore';
-import { useEffect, useState } from 'react';
 import { useLanguage } from '@/features/LanguageSwitcher';
+import { useHydration } from '@/shared/utils/useHydration/useHydration';
 import cls from './TypographyContent.module.scss';
 import { TypographyContentLoader } from './TypographyContentLoader';
 
 export function TypographyContent() {
     const { currentTrack } = usePlayerStore();
-    const [isHydratingDone, setIsHydratingDone] = useState(false);
-    const [title, setTitle] = useState('');
     const { language } = useLanguage();
 
-    useEffect(() => {
-        setIsHydratingDone(true);
-    }, []);
-    useEffect(() => {
-        switch (language) {
-        case 'en':
-            setTitle(currentTrack?.title.en || '');
-            break;
-        case 'ru':
-            setTitle(currentTrack?.title.ru || '');
-            break;
-        default:
-            setTitle('');
-            break;
-        }
-    }, [currentTrack?.title.en, currentTrack?.title.ru, language]);
+    const isHydratingDone = useHydration();
 
     if (!isHydratingDone) {
         return <TypographyContentLoader />;
     }
     return (
         <div className={cls.wrapper}>
-            <Typography isPlayerText className={cls.title} as="h2" text={title || ''} />
-            <Typography isPlayerText className={cls.description} text={currentTrack?.description || ''} />
+            <Typography isPlayerText className={cls.title} as="h2" text={currentTrack?.title[language || 'en'] || ''} />
+            <Typography isPlayerText className={cls.description} text={currentTrack?.description[language || 'en'] || ''} />
         </div>
     );
 }

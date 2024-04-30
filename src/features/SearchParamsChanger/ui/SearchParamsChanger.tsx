@@ -21,15 +21,24 @@ export function SearchParamsChanger() {
     );
 
     useEffect(() => {
+        console.log(pathname);
+        if (pathname !== '/') {
+            router.replace('/', { scroll: false });
+        }
+    }, [pathname, router]);
+    useEffect(() => {
         const id = searchParams.get('trackId');
         if (!id) {
             setCurrentTrack(1);
         } else if (+id > 0 && +id < tracks.length) {
             setCurrentTrack(+id);
+        } else {
+            setCurrentTrack(1);
         }
     }, [searchParams, setCurrentTrack, tracks.length]);
 
     useEffect(() => {
+        console.log(213);
         if (currentTrack?.id) {
             router.replace(`${pathname}?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
         }

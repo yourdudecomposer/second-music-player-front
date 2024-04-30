@@ -7,6 +7,7 @@ import { usePlayerStore } from '@/store/PlayerStore';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 import Typography from '@/shared/Typography/Typography';
+import { useLanguage } from '@/features/LanguageSwitcher';
 import cls from './TrackList.module.scss';
 import { TrackListItem } from '../TrackListItem/TrackListItem';
 
@@ -32,7 +33,7 @@ function enableScroll() {
 export function TrackList({ className }: TrackListProps) {
     const { isTrackListVisible, setIsTrackListVisible, currentTrack } = usePlayerStore();
     const [opacity, setOpacity] = useState(false);
-
+    const { language } = useLanguage();
     useEffect(() => {
         if (isTrackListVisible) {
             disableScroll();
@@ -60,7 +61,16 @@ export function TrackList({ className }: TrackListProps) {
         }
 
         return usePlayerStore.getState().tracks
-            .map((el) => <TrackListItem isTrackPlaying={currentTrack?.id === el.id} key={el.id} title={el.title.en} description={el.description} cover={el.cover} id={el.id} />)
+            .map((el) => (
+                <TrackListItem
+                    isTrackPlaying={currentTrack?.id === el.id}
+                    key={el.id}
+                    title={el.title[language || 'en']}
+                    description={el.description[language || 'en']}
+                    cover={el.cover}
+                    id={el.id}
+                />
+            ))
             .concat(<TrackListItem id={999} className={cls.lastElem} key={999} style={{ opacity: 0 }} title="" description="" cover="" />);
     };
 
