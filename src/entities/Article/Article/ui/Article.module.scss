@@ -12,6 +12,16 @@
     }
 }
 
+.skeleton_container{
+    padding-top: 51px;
+    width: 100%;
+
+    .skeleton{
+        height: 20px;
+    }
+
+}
+
 .title{
     font-size: 30px;
     font-weight: bold;

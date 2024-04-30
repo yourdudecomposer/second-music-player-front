@@ -1,7 +1,7 @@
 'use client';
 
 import {
-    ReactNode, createContext, useCallback, useContext, useMemo, useState,
+    ReactNode, createContext, useCallback, useContext, useEffect, useMemo, useState,
 } from 'react';
 
 type Language = 'ru' | 'en'
@@ -15,6 +15,11 @@ export function LanguageProvider({
     children: ReactNode;
   }) {
     const [language, setLanguage] = useState<Language>('en');
+
+    useEffect(() => {
+        if (navigator.language.includes('ru')) setLanguage('ru');
+        else { setLanguage('en'); }
+    }, []);
     const toggleLanguage = useCallback(() => {
         setLanguage(language === 'en' ? 'ru' : 'en');
     }, [language]);

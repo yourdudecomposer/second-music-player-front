@@ -60,7 +60,7 @@ export function TrackList({ className }: TrackListProps) {
         }
 
         return usePlayerStore.getState().tracks
-            .map((el) => <TrackListItem isTrackPlaying={currentTrack?.id === el.id} key={el.id} title={el.title} description={el.description} cover={el.cover} id={el.id} />)
+            .map((el) => <TrackListItem isTrackPlaying={currentTrack?.id === el.id} key={el.id} title={el.title.en} description={el.description} cover={el.cover} id={el.id} />)
             .concat(<TrackListItem id={999} className={cls.lastElem} key={999} style={{ opacity: 0 }} title="" description="" cover="" />);
     };
 

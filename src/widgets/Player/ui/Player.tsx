@@ -15,7 +15,10 @@ export async function Player() {
     const tracks = [
         {
             id: 1,
-            title: 'title 1',
+            title: {
+                en: 'Title 1',
+                ru: 'Название 1',
+            },
             description: 'description 1',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -25,7 +28,10 @@ export async function Player() {
         },
         {
             id: 2,
-            title: 'title 2',
+            title: {
+                en: 'Title 2',
+                ru: 'Название 2',
+            },
             description: 'description 2',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -35,7 +41,10 @@ export async function Player() {
         },
         {
             id: 3,
-            title: 'title 3',
+            title: {
+                en: 'Title 3',
+                ru: 'Название 3',
+            },
             description: 'description 3',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -45,7 +54,10 @@ export async function Player() {
         },
         {
             id: 4,
-            title: 'title 4',
+            title: {
+                en: 'Title 4',
+                ru: 'Название 4',
+            },
             description: 'description 4',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -55,7 +67,10 @@ export async function Player() {
         },
         {
             id: 5,
-            title: 'title 5',
+            title: {
+                en: 'Title 5',
+                ru: 'Название 5',
+            },
             description: 'description 5',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -65,7 +80,10 @@ export async function Player() {
         },
         {
             id: 6,
-            title: 'title 6',
+            title: {
+                en: 'Title 6',
+                ru: 'Название 6',
+            },
             description: 'description 6',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -75,7 +93,10 @@ export async function Player() {
         },
         {
             id: 7,
-            title: 'title 7',
+            title: {
+                en: 'Title 7',
+                ru: 'Название 7',
+            },
             description: 'description 7',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -85,7 +106,10 @@ export async function Player() {
         },
         {
             id: 8,
-            title: 'title 8',
+            title: {
+                en: 'Title 8',
+                ru: 'Название 8',
+            },
             // eslint-disable-next-line max-len
             description: 'description 8',
             audio: '/mock_audio.mp3',
@@ -96,7 +120,10 @@ export async function Player() {
         },
         {
             id: 9,
-            title: 'title 9',
+            title: {
+                en: 'Title 9',
+                ru: 'Название 9',
+            },
             description: 'description 9',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -106,7 +133,10 @@ export async function Player() {
         },
         {
             id: 10,
-            title: 'title 10',
+            title: {
+                en: 'Title 10',
+                ru: 'Название 10',
+            },
             description: 'description 10',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -116,7 +146,10 @@ export async function Player() {
         },
         {
             id: 11,
-            title: 'title 11',
+            title: {
+                en: 'Title 11',
+                ru: 'Название 11',
+            },
             description: 'description 11',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',
@@ -126,7 +159,10 @@ export async function Player() {
         },
         {
             id: 12,
-            title: 'title 12',
+            title: {
+                en: 'Title 12',
+                ru: 'Название 12',
+            },
             description: 'description 12',
             audio: '/mock_audio.mp3',
             cover: '/cover_url_1.jpg',

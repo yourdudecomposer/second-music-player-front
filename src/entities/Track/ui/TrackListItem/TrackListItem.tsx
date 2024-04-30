@@ -43,7 +43,7 @@ export function TrackListItem({
         }
     };
     const clickHandler = () => {
-        if (title === currentTrack?.title) {
+        if (title === currentTrack?.title.en) {
             playPause();
         } else {
             setCurrentTrack(id);

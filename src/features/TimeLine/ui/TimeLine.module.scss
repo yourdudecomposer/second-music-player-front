@@ -1,6 +1,8 @@
 .mobile_timer{
     display: flex;
     flex-direction: row;
+    position: relative;
+    top: 10px;
 
     @media screen and (width >= 768px) {
         display: none;

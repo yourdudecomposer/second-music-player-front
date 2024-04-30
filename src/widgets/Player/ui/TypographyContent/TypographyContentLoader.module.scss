@@ -1,6 +1,6 @@
 .wrapper{
     width: 100%;
-    aspect-ratio: 3/1;
+    aspect-ratio: 5/1;
     border-radius: 15px;
     overflow: hidden;
     max-width: calc(50vh - var(--player-padding));
@@ -8,4 +8,8 @@
     align-items: center;
     justify-content: center;
 
+    @media screen and (width >= 768px) {
+        aspect-ratio: 3/1;
+
+    }
 }

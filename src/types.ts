@@ -1,6 +1,9 @@
 export interface ITrack{
     id: number
-    title: string,
+    title: {
+        en:string
+        ru:string
+    },
     description: string,
     audio: string,
     cover: string,

@@ -6,6 +6,7 @@
     overflow: hidden;
     background-color: var(--scroll);
     opacity: .2;
+    border-radius: 3px;
   
     &::after {
         position: absolute;
