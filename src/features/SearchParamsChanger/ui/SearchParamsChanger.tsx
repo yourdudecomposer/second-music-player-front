@@ -21,12 +21,6 @@ export function SearchParamsChanger() {
     );
 
     useEffect(() => {
-        if (pathname !== '/') {
-            router.push('/');
-            console.log(pathname);
-        }
-    }, [pathname, router]);
-    useEffect(() => {
         const id = searchParams.get('trackId');
         if (!id) {
             setCurrentTrack(1);
