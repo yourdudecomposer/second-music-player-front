@@ -33,7 +33,7 @@ export function SearchParamsChanger() {
 
     useEffect(() => {
         console.log(213);
-        if (currentTrack?.id) {
+        if (currentTrack?.id && pathname === '/') {
             router.replace(`?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
         }
     }, [createQueryString, currentTrack?.id, pathname, router]);
