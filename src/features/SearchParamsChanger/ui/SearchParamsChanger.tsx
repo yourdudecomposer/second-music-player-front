@@ -21,7 +21,6 @@ export function SearchParamsChanger() {
     );
 
     useEffect(() => {
-        console.log(pathname);
         if (pathname !== '/') {
             router.push('/');
         }
@@ -40,7 +39,7 @@ export function SearchParamsChanger() {
     useEffect(() => {
         console.log(213);
         if (currentTrack?.id) {
-            router.replace(`${pathname}?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
+            router.replace(`?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
         }
     }, [createQueryString, currentTrack?.id, pathname, router]);
     return null;
