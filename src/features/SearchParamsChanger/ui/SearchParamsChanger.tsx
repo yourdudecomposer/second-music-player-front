@@ -23,7 +23,7 @@ export function SearchParamsChanger() {
     useEffect(() => {
         console.log(pathname);
         if (pathname !== '/') {
-            router.replace('/', { scroll: false });
+            router.push('/');
         }
     }, [pathname, router]);
     useEffect(() => {
