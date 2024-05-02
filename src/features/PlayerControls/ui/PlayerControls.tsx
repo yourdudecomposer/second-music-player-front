@@ -2,7 +2,7 @@
 
 import { clsx } from 'clsx';
 import { ShowTrackListButton } from '@/features/ShowTrackListButton';
-import { EQButton } from '@/features/EQButton';
+import { CopyButton } from '@/features/CopyButton';
 import { VolumeButton } from '@/features/VolumeButton';
 import { NextButton } from '../NextButton/NextButton';
 import { PlayPauseButton } from '../PlayPauseButton/PlayPauseButton';
@@ -29,7 +29,7 @@ export function PlayerControls({ className }: PlayerControlsProps) {
                 <RepeatButton />
             </div>
             <div className={clsx(cls.right_wrapper)}>
-                <EQButton className={cls.eq_btn} />
+                <CopyButton className={cls.eq_btn} />
                 <VolumeButton />
             </div>
         </div>

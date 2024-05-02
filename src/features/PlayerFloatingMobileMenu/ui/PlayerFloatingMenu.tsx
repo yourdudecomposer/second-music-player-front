@@ -2,7 +2,7 @@
 
 import { NoteButton } from '@/features/NoteButton';
 import { ShowTrackListButton } from '@/features/ShowTrackListButton';
-import { EQButton } from '@/features/EQButton';
+import { CopyButton } from '@/features/CopyButton';
 import { VolumeButton } from '@/features/VolumeButton';
 import { usePlayerStore } from '@/store/PlayerStore';
 import clsx from 'clsx';
@@ -40,7 +40,7 @@ export function PlayerFloatingMenu({ className }: PlayerFloatingMenuProps) {
             <div ref={ref} className={clsx(className, cls.div, (isTrackListVisible || !isTrackListGoing) && cls.fixed)}>
                 <ShowTrackListButton />
                 <NoteButton />
-                <EQButton />
+                <CopyButton />
                 <VolumeButton />
             </div>
             <div

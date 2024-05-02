@@ -12,8 +12,16 @@
     }
 
     svg{
-        width: 80px;
-        height: 80px;
+        width: 75px;
+        height: 75px;
+
+        @media screen and (width >= 768px) {
+            width: 80px;
+            height: 80px;
+        }
+    
+     
+
         fill: var(--play-pause);
         z-index: 1;
     }

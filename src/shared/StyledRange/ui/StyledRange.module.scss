@@ -3,7 +3,7 @@
 /* range 2 */
 .wrapper{
     width: 100%;
-    border-radius: 15px;
+    border-radius: 4px;
     height: 8px;
     background: var(--controls-not-active);
     position: relative;
@@ -16,13 +16,12 @@
     top: 0;left: 0;
     background: #888; 
     border-radius: 15px;
-
 }
 
 .range_input {
     position: absolute;
     left: 0;
-    border-radius: 15px;
+    border-radius: 3px;
     top: 0;
     appearance: none; 
     width: 100%;
@@ -41,20 +40,19 @@
     height: 15px;
     width: 15px;
     position: relative;
-    right: 8px;
+    right: 2.75px;
     transform: translateX(var(--transform));
     background-color: var(--controls-active);
     border-radius: 50%;
     border: none;
     transition: .2s ease-in-out;
-    
 }
   
 .range_input::-moz-range-thumb {
     height: 15px;
     width: 15px;
     position: relative;
-    right: 8px;
+    right: 2.75px;
     transform: translateX(var(--transform));
     background-color: var(--controls-active);
     border-radius: 50%;

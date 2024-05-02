@@ -38,7 +38,7 @@ export function StyledRange({
     const styleObjBuffer = useMemo(() => ({ width: `${buffered}%` }), [buffered]);
     useEffect(() => {
         const slider = document.getElementById('range2');
-        const transform = `${progress}%`;
+        const transform = `${(progress / 100) * 35}%`;
         if (slider) {
             slider.style.setProperty('--transform', transform);
         }

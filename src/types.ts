@@ -14,5 +14,9 @@ export interface ITrack{
     createdAt:string
     updatedAt:string
 }
+export interface IArticle{
+  ru: Record<string, string>,
+  en: Record<string, string>
+}
 
 export type RepeatType = 'none'| 'one'| 'all'

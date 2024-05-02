@@ -35,21 +35,7 @@
 
         }
 
-        .image_wrapper{
-            width: 100%;
-            position: relative;
-            aspect-ratio: 1 / 1;
-            max-width: calc(50vh - var(--player-padding));
-            max-height:  calc(50vh - var(--player-padding));
-            border-radius: 15px;
-            overflow: hidden;
-
-      
-
-            img{
-                object-fit: cover;
-            }
-        }
+       
     }
 
     .player_bottom{
