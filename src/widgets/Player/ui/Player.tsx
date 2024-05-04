@@ -14,7 +14,7 @@ import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 import { ImageContent } from './ImageContent/ImageContent';
 
-export async function Player() {
+export function Player() {
     return (
         <TrackListSwipeWrapper>
             <AudioContextProvider>

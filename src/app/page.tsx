@@ -4,8 +4,7 @@ import { ArticleThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 import cls from './page.module.scss';
 
-export default async function Home() {
-    console.log(123);
+export default function Home() {
     return (
         <div className={cls.page}>
             <div

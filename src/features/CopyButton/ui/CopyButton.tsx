@@ -34,7 +34,7 @@ export function CopyButton({ className }: CopyButtonProps) {
         <>
             {open
         && (
-            <ClientOnlyPortal selector="#player">
+            <ClientOnlyPortal selector="body">
                 <Tooltip className={cls.tooltip} text={language === 'en' ? 'copied!' : 'скопировано!'} />
             </ClientOnlyPortal>
         )}
