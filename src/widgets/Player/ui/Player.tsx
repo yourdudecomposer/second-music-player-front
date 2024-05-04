@@ -10,11 +10,13 @@ import { AudioContextProvider } from '@/entities/PlayerRef';
 import { SearchParamsChanger } from '@/features/SearchParamsChanger';
 import { Suspense } from 'react';
 import { filteredTracks as tracks } from '@/data/tracks';
+import { usePlayerStore } from '@/store/PlayerStore';
 import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 import { ImageContent } from './ImageContent/ImageContent';
 
 export function Player() {
+    const { currentTrack } = usePlayerStore();
     return (
         <TrackListSwipeWrapper>
             <AudioContextProvider>
@@ -27,6 +29,7 @@ export function Player() {
 
                     <div className={cls.player_top}>
                         <ImageContent />
+                        <audio controls src={currentTrack?.audio} />
                         <TypographyContent />
                     </div>
                     <div className={cls.player_bottom}>
