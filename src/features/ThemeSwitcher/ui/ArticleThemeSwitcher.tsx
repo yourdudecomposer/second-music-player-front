@@ -15,9 +15,9 @@ export function ArticleThemeSwitcher() {
             onClick={() => {
                 toggleTheme();
             }}
-            className={clsx(cls.button, theme === 'article_light' && cls.smaller)}
+            className={clsx(cls.button, theme === 'article_dark' && cls.smaller)}
         >
-            {theme === 'article_dark' ? <Sun /> : <Moon />}
+            {theme === 'article_dark' ? <Moon /> : <Sun />}
         </ControlButtonWrapper>
     );
 }

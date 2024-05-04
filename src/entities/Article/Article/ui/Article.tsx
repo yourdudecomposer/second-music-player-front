@@ -32,7 +32,7 @@ export function Article({ className }: ArticleProps) {
     return (
         <div className={className}>
 
-            <Typography className={cls.title} text="Welcome" />
+            <Typography className={cls.title} text={language ? article[language].greeting : ''} />
             <div className={clsx(cls.text, 'plain_text_size')}>
                 <Typography text={language ? article[language].parOne : ''} />
                 <Typography text={language ? article[language].parTwo : ''} />
