@@ -1,10 +1,12 @@
 'use client';
 
+import { useLanguage } from '@/features/LanguageSwitcher';
 import { usePlayerStore } from '@/store/PlayerStore';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 
-export function SearchParamsChanger() {
+export function SearchParamsChanger() { // also here we define title
+    const { language } = useLanguage();
     const { currentTrack, setCurrentTrack, tracks } = usePlayerStore();
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -31,8 +33,9 @@ export function SearchParamsChanger() {
 
     useEffect(() => {
         if (currentTrack?.id && pathname === '/') {
+            document.title = `guitar player${currentTrack.title[language || 'en'] ? ` - ${currentTrack.title[language || 'en']}` : ''}`;
             router.replace(`?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
         }
-    }, [createQueryString, currentTrack?.id, pathname, router]);
+    }, [createQueryString, currentTrack?.id, currentTrack?.title, language, pathname, router]);
     return null;
 }

@@ -11,7 +11,7 @@ import { LanguageProvider } from '@/features/LanguageSwitcher';
 const inter = Nunito({ weight: ['400', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'title',
+    title: 'guitar player',
 };
 
 export default function RootLayout({
