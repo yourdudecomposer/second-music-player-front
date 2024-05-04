@@ -11,8 +11,6 @@ export interface ITrack{
     audio: string,
     cover: string,
     isActive: boolean
-    createdAt:string
-    updatedAt:string
 }
 export interface IArticle{
   ru: Record<string, string>,

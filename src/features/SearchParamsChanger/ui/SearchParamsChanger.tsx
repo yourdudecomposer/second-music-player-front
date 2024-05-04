@@ -22,17 +22,14 @@ export function SearchParamsChanger() {
 
     useEffect(() => {
         const id = searchParams.get('trackId');
-        if (!id) {
-            setCurrentTrack(1);
-        } else if (+id > 0 && +id < tracks.length) {
-            setCurrentTrack(+id);
+        if (!id || !tracks.some((el) => el.id === +id)) {
+            setCurrentTrack(tracks[0]?.id);
         } else {
-            setCurrentTrack(1);
+            setCurrentTrack(+id);
         }
-    }, [searchParams, setCurrentTrack, tracks.length]);
+    }, [searchParams, setCurrentTrack, tracks]);
 
     useEffect(() => {
-        console.log(pathname);
         if (currentTrack?.id && pathname === '/') {
             router.replace(`?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
         }

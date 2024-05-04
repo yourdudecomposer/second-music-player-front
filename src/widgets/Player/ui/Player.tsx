@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import { AudioContextProvider } from '@/entities/PlayerRef';
 import { SearchParamsChanger } from '@/features/SearchParamsChanger';
 import { Suspense } from 'react';
-import { tracks } from '@/data/tracks';
+import { filteredTracks as tracks } from '@/data/tracks';
 import cls from './Player.module.scss';
 import { TypographyContent } from './TypographyContent/TypographyContent';
 import { ImageContent } from './ImageContent/ImageContent';

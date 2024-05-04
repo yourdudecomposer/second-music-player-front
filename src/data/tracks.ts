@@ -1,6 +1,6 @@
 import { ITrack } from '@/types';
 
-export const tracks:ITrack[] = [
+const tracks:ITrack[] = [
     {
         id: 1,
         title: {
@@ -13,9 +13,7 @@ export const tracks:ITrack[] = [
         },
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
-        isActive: true,
-        createdAt: '2023-10-23T16:16:15.846Z',
-        updatedAt: '2023-10-23T16:16:15.846Z',
+        isActive: false,
     },
     {
         id: 2,
@@ -29,9 +27,7 @@ export const tracks:ITrack[] = [
         },
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
-        isActive: true,
-        createdAt: '2023-11-23T16:16:15.846Z',
-        updatedAt: '2023-11-23T16:16:15.846Z',
+        isActive: false,
     },
     {
         id: 3,
@@ -46,8 +42,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-23T16:16:15.846Z',
-        updatedAt: '2023-10-23T16:16:15.846Z',
+
     },
     {
         id: 4,
@@ -62,8 +57,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-23T16:16:15.846Z',
-        updatedAt: '2023-10-23T16:16:15.846Z',
+
     },
     {
         id: 5,
@@ -78,8 +72,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-22T16:16:15.846Z',
-        updatedAt: '2023-10-22T16:16:15.846Z',
+
     },
     {
         id: 6,
@@ -94,8 +87,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-13T16:16:15.846Z',
-        updatedAt: '2023-10-13T16:16:15.846Z',
+
     },
     {
         id: 7,
@@ -110,8 +102,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-23T15:16:15.846Z',
-        updatedAt: '2023-10-23T15:16:15.846Z',
+
     },
     {
         id: 8,
@@ -127,8 +118,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-23T16:15:15.846Z',
-        updatedAt: '2023-10-23T16:15:15.846Z',
+
     },
     {
         id: 9,
@@ -143,8 +133,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-23T16:17:15.846Z',
-        updatedAt: '2023-10-23T16:17:15.846Z',
+
     },
     {
         id: 10,
@@ -159,8 +148,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-29T16:16:15.846Z',
-        updatedAt: '2023-10-29T16:16:15.846Z',
+
     },
     {
         id: 11,
@@ -175,8 +163,7 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-12-23T16:16:15.846Z',
-        updatedAt: '2023-12-23T16:16:15.846Z',
+
     },
     {
         id: 12,
@@ -191,7 +178,8 @@ export const tracks:ITrack[] = [
         audio: '/mock_audio.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-        createdAt: '2023-10-23T16:16:17.846Z',
-        updatedAt: '2023-10-23T16:16:17.846Z',
+
     },
 ];
+
+export const filteredTracks = tracks.filter((el) => el.isActive);
