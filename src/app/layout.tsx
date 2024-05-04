@@ -12,7 +12,6 @@ const inter = Nunito({ weight: ['400', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
     title: 'title',
-    description: 'description',
 };
 
 export default function RootLayout({
