@@ -35,7 +35,7 @@ export function StyledRange({
         setProgress((value / maxValue) * 100);
         return { background: `linear-gradient(to right, #4936CC calc(${progress}%), transparent ${progress}%)` };
     }, [maxValue, progress, value]);
-    const styleObjBuffer = useMemo(() => ({ width: `${Math.round(buffered)}%` }), [buffered]); // when buffered < 1 timeline styles break
+    const styleObjBuffer = useMemo(() => ({ width: `${buffered < 2 ? 0 : buffered}%` }), [buffered]); // when buffered < 2 timeline styles break
     useEffect(() => {
         const slider = document.getElementById('range2');
         const transform = `${(progress / 100) * 35}%`;
