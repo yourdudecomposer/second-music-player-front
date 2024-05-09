@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import cls from './Buffered.module.scss';
 
 interface BufferedProps {
     className?:string
