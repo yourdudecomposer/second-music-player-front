@@ -50,20 +50,23 @@ export function StyledRange({
 
     console.log('obj: ', obj);
     return (
-        <div className={cls.wrapper}>
-            <div style={obj} className={cls.progress} />
-            <input
-                onTouchEnd={onTouchEnd}
-                onMouseUp={onMouseUp}
-                style={styleObjTime}
-                type="range"
-                min={minValue}
-                max={maxValue}
-                value={value}
-                onInput={onInput}
-                id="range2"
-                className={cls.range_input}
-            />
-        </div>
+        <>
+            <p>{obj.toString()}</p>
+            <div className={cls.wrapper}>
+                <div style={obj} className={cls.progress} />
+                <input
+                    onTouchEnd={onTouchEnd}
+                    onMouseUp={onMouseUp}
+                    style={styleObjTime}
+                    type="range"
+                    min={minValue}
+                    max={maxValue}
+                    value={value}
+                    onInput={onInput}
+                    id="range2"
+                    className={cls.range_input}
+                />
+            </div>
+        </>
     );
 }
