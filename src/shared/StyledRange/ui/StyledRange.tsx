@@ -4,7 +4,6 @@ import {
     ChangeEvent, MouseEvent, TouchEvent, useEffect, useMemo, useState,
 } from 'react';
 import cls from './StyledRange.module.scss';
-import { Buffered } from './Buffered';
 
 interface StyledRangeProps {
     value:number
@@ -49,12 +48,12 @@ export function StyledRange({
         }
     }, [progress]);
 
-    console.log('obj: ', obj);
+    console.log('obj: ', obj, buffered);
     return (
         <>
             <p style={{ color: 'white' }}>{JSON.stringify(obj)}</p>
             <div className={cls.wrapper}>
-                <Buffered buffered={buffered} className={cls.progress} />
+                <div style={obj} className={cls.progress} />
                 <input
                     onTouchEnd={onTouchEnd}
                     onMouseUp={onMouseUp}

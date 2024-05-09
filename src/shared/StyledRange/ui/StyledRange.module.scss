@@ -10,7 +10,6 @@
 }
 
 .progress{
-    width: 30%;
     height: 8px;
     position: absolute;
     top: 0;left: 0;
@@ -29,7 +28,7 @@
     cursor: pointer;
 
     // outline: none;
-    background: var(--controls-not-active);
+    background: transparent;
 
 }
 
