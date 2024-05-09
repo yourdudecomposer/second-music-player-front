@@ -29,6 +29,7 @@ export function Player() {
 
                     <div className={cls.player_top}>
                         <ImageContent />
+                        {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                         <audio controls src={currentTrack?.audio} />
                         <TypographyContent />
                     </div>
