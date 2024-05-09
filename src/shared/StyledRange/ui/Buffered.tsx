@@ -11,6 +11,6 @@ export function Buffered({ className, buffered }: BufferedProps) {
         setObj({ width: `${buffered < 2 ? 0 : buffered}%` });
     }, [buffered]);
     return (
-        <div style={obj} className={`${className} ${cls.div}`} />
+        <div style={obj} className={`${className}`} />
     );
 }
