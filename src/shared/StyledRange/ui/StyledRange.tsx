@@ -43,6 +43,8 @@ export function StyledRange({
             slider.style.setProperty('--transform', transform);
         }
     }, [progress]);
+
+    console.log('styleObjBuffer: ', styleObjBuffer);
     return (
         <div className={cls.wrapper}>
             <div style={styleObjBuffer} className={cls.progress} />
