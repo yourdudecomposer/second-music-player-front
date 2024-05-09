@@ -51,7 +51,7 @@ export function StyledRange({
     console.log('obj: ', obj);
     return (
         <>
-            <p>{obj.toString()}</p>
+            <p style={{ color: 'white' }}>{JSON.stringify(obj)}</p>
             <div className={cls.wrapper}>
                 <div style={obj} className={cls.progress} />
                 <input
