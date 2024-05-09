@@ -6,11 +6,11 @@ interface BufferedProps {
 }
 
 export function Buffered({ className, buffered }: BufferedProps) {
-    const [obj, setObj] = useState({});
+    const [width, setWidth] = useState(0);
+
     useEffect(() => {
-        setObj({ width: `${buffered < 2 ? 0 : buffered}%` });
+        setWidth(buffered < 2 ? 0 : buffered);
     }, [buffered]);
-    return (
-        <div style={obj} className={`${className}`} />
-    );
+
+    return <div style={{ width: `${width}%` }} className={className} />;
 }
