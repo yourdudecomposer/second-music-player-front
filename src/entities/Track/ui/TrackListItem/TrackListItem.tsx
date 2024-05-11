@@ -5,7 +5,7 @@
 
 import Image from 'next/image';
 import Typography from '@/shared/Typography/Typography';
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useEffect, useState } from 'react';
 import { usePlayerStore } from '@/store/PlayerStore';
 import clsx from 'clsx';
 import { useAudioContext } from '@/entities/PlayerRef';
@@ -38,8 +38,13 @@ export function TrackListItem({
     } = usePlayerStore();
     const player = useAudioContext();
     const isHydration = useHydration();
-    const [source, setSource] = useState<any>(cover);
+    const [source, setSource] = useState<string>(imageBlurData);
 
+    useEffect(() => {
+        if (cover) {
+            setSource(cover);
+        }
+    }, [cover]);
     const playPause = () => {
         if (isPlaying) {
             setIsPlaying(false);
@@ -63,6 +68,7 @@ export function TrackListItem({
             }, 100);
         }
     };
+
     return (
         <div onClick={clickHandler} style={style} className={clsx(className, cls.wrapper)}>
             <div className={cls.image}>

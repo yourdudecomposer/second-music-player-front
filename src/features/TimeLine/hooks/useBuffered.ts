@@ -22,7 +22,5 @@ export const useBuffered = () => {
         };
     }, [player, progressFunc]);
 
-    useEffect(() => { console.log(buffered); }, [buffered]);
-
     return buffered;
 };
