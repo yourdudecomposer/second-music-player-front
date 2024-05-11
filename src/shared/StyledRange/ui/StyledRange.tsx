@@ -29,7 +29,6 @@ export function StyledRange({
     maxValue = 100,
 }: StyledRangeProps) {
     const [progress, setProgress] = useState(0);
-    const [obj, setObj] = useState({});
 
     const styleObjTime = useMemo(() => {
         if (value === 0) return {};
@@ -37,9 +36,7 @@ export function StyledRange({
         return { background: `linear-gradient(to right, #4936CC calc(${progress}%), transparent ${progress}%)` };
     }, [maxValue, progress, value]);
 
-    useEffect(() => {
-        setObj({ width: `${buffered < 2 ? 0 : buffered}%` });
-    }, [buffered]);
+    const styleObjBuffer = useMemo(() => ({ width: `${buffered < 2 ? 0 : buffered}%` }), [buffered]); // when buffered < 2 timeline styles break
     useEffect(() => {
         const slider = document.getElementById('range2');
         const transform = `${(progress / 100) * 35}%`;
@@ -50,7 +47,7 @@ export function StyledRange({
 
     return (
         <div className={cls.wrapper}>
-            <div style={obj} className={cls.progress} />
+            <div style={styleObjBuffer} className={cls.progress} />
             <input
                 onTouchEnd={onTouchEnd}
                 onMouseUp={onMouseUp}
