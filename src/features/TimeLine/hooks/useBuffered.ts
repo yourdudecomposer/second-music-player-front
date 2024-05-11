@@ -6,31 +6,23 @@ export const useBuffered = () => {
 
     const [buffered, setBuffered] = useState<number>(0);
 
-    // eslint-disable-next-line no-unused-vars
-    const onProgress = useCallback((e: any) => {
-        if (player) {
-            const { duration } = player;
-            if (duration > 0) {
-                // eslint-disable-next-line no-plusplus
-                for (let i = 0; i < player.buffered.length; i++) {
-                    if (
-                        player.buffered.start(player.buffered.length - 1 - i)
-      < player.currentTime
-                    ) {
-                        // eslint-disable-next-line no-console
-                        setBuffered((player.buffered.end(player.buffered.length - 1 - i) * 100) / duration);
-
-                        break;
-                    }
-                }
-            }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const progressFunc = useCallback(() => {
+        const bufferedEnd = player?.buffered.end(player.buffered.length - 1) || 0;
+        const duration = player?.duration || 0;
+        if (duration > 0) {
+            setBuffered((bufferedEnd / duration) * 100);
         }
-    }, [player]);
+    }, [player?.buffered, player?.duration]);
 
     useEffect(() => {
-        player?.addEventListener('progress', onProgress);
-        return () => { player?.removeEventListener('progress', onProgress); };
-    }, [onProgress, player]);
+        player?.addEventListener('progress', progressFunc);
+        return () => {
+            player?.removeEventListener('progress', progressFunc);
+        };
+    }, [player, progressFunc]);
+
+    useEffect(() => { console.log(buffered); }, [buffered]);
 
     return buffered;
 };
