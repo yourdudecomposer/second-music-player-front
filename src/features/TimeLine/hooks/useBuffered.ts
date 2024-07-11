@@ -8,7 +8,8 @@ export const useBuffered = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const progressFunc = useCallback(() => {
-        const bufferedEnd = player?.buffered.end(player.buffered.length - 1) || 0;
+        console.log(player?.buffered);
+        const bufferedEnd = player?.buffered?.end(player.buffered.length - 1) || 0;
         const duration = player?.duration || 0;
         if (duration > 0) {
             setBuffered((bufferedEnd / duration) * 100);

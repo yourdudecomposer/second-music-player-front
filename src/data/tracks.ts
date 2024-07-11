@@ -4,182 +4,74 @@ const tracks:ITrack[] = [
     {
         id: 1,
         title: {
-            en: 'Title 1',
-            ru: 'Название 1',
+            en: 'Guitar and Orchestra, No. 1',
+            ru: 'Гитара и Оркестр No 1',
         },
         description: {
-            en: 'Description 1',
-            ru: 'Описание 1',
+            en: 'written in 2020 when I was a music teacher',
+            ru: 'написано в 2020 когда я был преподавателем музыки',
         },
-        audio: '/mock_audio.mp3',
+        audio: '/guitar_and_orchestra_2.mp3',
         cover: '/cover_url_1.jpg',
-        isActive: false,
+        isActive: true,
     },
     {
         id: 2,
         title: {
-            en: 'Title 2',
-            ru: 'Название 2',
+            en: 'Guitar and Orchestra, No. 2',
+            ru: 'Гитара и Оркестр No 2',
         },
         description: {
-            en: 'Description 2',
-            ru: 'Описание 2',
+            en: 'like the previous one, 2020',
+            ru: 'как и предыдущее, 2020',
         },
-        audio: '/mock_audio.mp3',
+        audio: '/guitar_and_orchestra_2.mp3',
         cover: '/cover_url_1.jpg',
-        isActive: false,
+        isActive: true,
     },
     {
         id: 3,
         title: {
-            en: 'Title 3',
-            ru: 'Название 3',
+            en: 'Guitar, Duduk and Orchestra',
+            ru: 'Гитар, Дудук  и Оркестр',
         },
         description: {
-            en: 'Description 3',
-            ru: 'Описание 3',
+            en: 'I really like the sound of the duduk. Made it a solo.',
+            ru: 'очень понравилось как звучит дудук. сделал его солирующим',
         },
-        audio: '/mock_audio.mp3',
+        audio: '/guitar_and_orchestra_2.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-
     },
     {
         id: 4,
         title: {
-            en: 'Title 4',
-            ru: 'Название 4',
+            en: 'Guitar and Orchestra, No. 3',
+            ru: 'Гитара и Оркестр No 3',
         },
         description: {
-            en: 'Description 4',
-            ru: 'Описание 4',
+            en: "It's written in 2024. I wanted to drive",
+            ru: 'Написано в 2024. Захотелось драйва',
         },
-        audio: '/mock_audio.mp3',
+        audio: '/guitar_and_orchestra_2.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-
     },
     {
         id: 5,
         title: {
-            en: 'Title 5',
-            ru: 'Название 5',
+            en: 'Guitar and Orchestra, No. 4',
+            ru: 'Гитара и Оркестр No 4',
         },
         description: {
-            en: 'Description 5',
-            ru: 'Описание 5',
+            en: 'free form with increasing and decreasing tension',
+            ru: 'свободная форма с то нарастающим, то убывающим напряжением',
         },
-        audio: '/mock_audio.mp3',
+        audio: '/guitar_and_orchestra_2.mp3',
         cover: '/cover_url_1.jpg',
         isActive: true,
-
     },
-    {
-        id: 6,
-        title: {
-            en: 'Title 6',
-            ru: 'Название 6',
-        },
-        description: {
-            en: 'Description 6',
-            ru: 'Описание 6',
-        },
-        audio: '/mock_audio.mp3',
-        cover: '/cover_url_1.jpg',
-        isActive: true,
 
-    },
-    {
-        id: 7,
-        title: {
-            en: 'Title 7',
-            ru: 'Название 7',
-        },
-        description: {
-            en: 'Description 7',
-            ru: 'Описание 7',
-        },
-        audio: '/mock_audio.mp3',
-        cover: '/cover_url_1.jpg',
-        isActive: true,
-
-    },
-    {
-        id: 8,
-        title: {
-            en: 'Title 8',
-            ru: 'Название 8',
-        },
-        // eslint-disable-next-line max-len
-        description: {
-            en: 'Description 8',
-            ru: 'Описание 8',
-        },
-        audio: '/mock_audio.mp3',
-        cover: '/cover_url_1.jpg',
-        isActive: true,
-
-    },
-    {
-        id: 9,
-        title: {
-            en: 'Title 9',
-            ru: 'Название 9',
-        },
-        description: {
-            en: 'Description 9',
-            ru: 'Описание 9',
-        },
-        audio: '/mock_audio.mp3',
-        cover: '/cover_url_1.jpg',
-        isActive: true,
-
-    },
-    {
-        id: 10,
-        title: {
-            en: 'Title 10',
-            ru: 'Название 10',
-        },
-        description: {
-            en: 'Description 10',
-            ru: 'Описание 10',
-        },
-        audio: '/mock_audio.mp3',
-        cover: '/cover_url_1.jpg',
-        isActive: true,
-
-    },
-    {
-        id: 11,
-        title: {
-            en: 'Title 11',
-            ru: 'Название 11',
-        },
-        description: {
-            en: 'Description 11',
-            ru: 'Описание 11',
-        },
-        audio: '/mock_audio.mp3',
-        cover: '/cover_url_1.jpg',
-        isActive: true,
-
-    },
-    {
-        id: 12,
-        title: {
-            en: 'Title 12',
-            ru: 'Название 12',
-        },
-        description: {
-            en: 'Description 12',
-            ru: 'Описание 12',
-        },
-        audio: '/mock_audio.mp3',
-        cover: '/cover_url_1.jpg',
-        isActive: true,
-
-    },
 ];
 
 export const filteredTracks = tracks.filter((el) => el.isActive);

@@ -13,7 +13,7 @@ interface ContactsProps {
 export function Contacts({ className }: ContactsProps) {
     return (
         <div className={clsx(className, cls.div, 'plain_text_size')}>
-            <a className={cls.mail_link} href="mailto:goriainovfilipp@yandex.ru&body=привет?subject=вопрос">mailtomail@mail.ru</a>
+            <a className={cls.mail_link} href="mailto:goriainovfilipp@yandex.ru">goriainovfilipp@yandex.ru</a>
             <div className={cls.social_wrapper}>
                 <SocialSvgWrapper href="https://www.youtube.com/@filippgoriainov6371" color="red">
                     <Youtube />
