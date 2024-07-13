@@ -18,11 +18,11 @@ export function Contacts({ className }: ContactsProps) {
                 <SocialSvgWrapper href="https://www.youtube.com/@filippgoriainov6371" color="red">
                     <Youtube />
                 </SocialSvgWrapper>
-                <SocialSvgWrapper href="https://vk.com/artist/filippgoriainov" color="#0077FF">
-                    <Vk />
-                </SocialSvgWrapper>
                 <SocialSvgWrapper className={cls.tg_moving} href="https://t.me/guitarandorchestra" color="#2aabee">
                     <Telegram />
+                </SocialSvgWrapper>
+                <SocialSvgWrapper href="https://vk.com/artist/filippgoriainov" color="#0077FF">
+                    <Vk />
                 </SocialSvgWrapper>
                 <SocialSvgWrapper color="transparent" className={cls.spotify_icon_wrapper} href="https://open.spotify.com/artist/676YDxdfj0g6e5deXEuXi0">
                     <Spotify />
