@@ -14,7 +14,9 @@ export const useBuffered = () => {
             setBuffered((bufferedEnd / duration) * 100);
         }
     }, [player?.buffered, player?.duration]);
-
+    useEffect(() => {
+        console.log('Also i am frontend developer. But this site about music not about my codding skills');
+    }, []);
     useEffect(() => {
         player?.addEventListener('progress', progressFunc);
         return () => {

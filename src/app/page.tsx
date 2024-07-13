@@ -5,7 +5,6 @@ import { LanguageSwitcher } from '@/features/LanguageSwitcher';
 import cls from './page.module.scss';
 
 export default function Home() {
-    console.log('Also i am frontend developer. But this site about music not about my codding skills');
     return (
         <div className={cls.page}>
             <div
