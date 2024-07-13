@@ -8,11 +8,11 @@ const tracks:ITrack[] = [
             ru: 'Гитара и Оркестр No 1',
         },
         description: {
-            en: 'written in 2020 when I was a music teacher',
-            ru: 'написано в 2020 когда я был преподавателем музыки',
+            en: 'A short piece with a climax towards the end of it. written in 2020',
+            ru: 'Коротакая пьеса с кульминацией к концу произведения. написана в 2020',
         },
         audio: '/guitar_and_orchestra_1.mp3',
-        cover: '/cover_url_1.jpg',
+        cover: '/cover.jpg',
         isActive: true,
     },
     {
@@ -22,11 +22,11 @@ const tracks:ITrack[] = [
             ru: 'Гитара и Оркестр No 2',
         },
         description: {
-            en: 'like the previous one, 2020',
-            ru: 'как и предыдущее, 2020',
+            en: 'Guitar tuned to Drop C, lots of emotion and bells',
+            ru: 'Гитара настроена в Drop C, много эмоций и колокола',
         },
         audio: '/guitar_and_orchestra_2.mp3',
-        cover: '/cover_url_1.jpg',
+        cover: '/cover.jpg',
         isActive: true,
     },
     {
@@ -37,10 +37,10 @@ const tracks:ITrack[] = [
         },
         description: {
             en: 'I really like the sound of the duduk. Made it a solo.',
-            ru: 'очень понравилось как звучит дудук. сделал его солирующим',
+            ru: 'Очень понравилось как звучит дудук. сделал его солирующим',
         },
         audio: '/guitar_duduk_and_orchestra.mp3',
-        cover: '/cover_url_1.jpg',
+        cover: '/cover.jpg',
         isActive: true,
     },
     {
@@ -50,11 +50,11 @@ const tracks:ITrack[] = [
             ru: 'Гитара и Оркестр No 3',
         },
         description: {
-            en: "It's written in 2024. I wanted to drive",
-            ru: 'Написано в 2024. Захотелось драйва',
+            en: 'A simple piece to relieve attention',
+            ru: 'Простая пьеса для того чтобы разрядить внимание',
         },
         audio: '/guitar_and_orchestra_3.mp3',
-        cover: '/cover_url_1.jpg',
+        cover: '/cover.jpg',
         isActive: true,
     },
     {
@@ -64,11 +64,11 @@ const tracks:ITrack[] = [
             ru: 'Гитара и Оркестр No 4',
         },
         description: {
-            en: 'free form with increasing and decreasing tension',
-            ru: 'свободная форма с то нарастающим, то убывающим напряжением',
+            en: 'Free form of the piece with increasing and decreasing tension',
+            ru: 'Свободная форма произведения с то нарастающим, то убывающим напряжением',
         },
         audio: '/guitar_and_orchestra_4.mp3',
-        cover: '/cover_url_1.jpg',
+        cover: '/cover.jpg',
         isActive: true,
     },
 

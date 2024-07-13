@@ -6,7 +6,10 @@
         top: 0;
         right: 0;
         display: flex;
-        gap: 10px;
+
+        @media screen and (width >= 768px) {
+            gap: 10px;
+        }
     }
 
     .article{
