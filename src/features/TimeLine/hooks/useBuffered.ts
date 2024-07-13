@@ -15,7 +15,10 @@ export const useBuffered = () => {
         }
     }, [player?.buffered, player?.duration]);
     useEffect(() => {
-        console.log('Also i am frontend developer. But this site about music not about my codding skills');
+        const style1 = 'color:yellow; font-size:30px; font-weight: bold; -webkit-text-stroke: 1px black;';
+        const style2 = 'color:green; font-size:30px; font-weight: bold; -webkit-text-stroke: 1px black;';
+        console.log('%c Also i am a frontend developer. But this site about music, not about my codding skills.', style1);
+        console.log('%c Thank you for listening!', style2);
     }, []);
     useEffect(() => {
         player?.addEventListener('progress', progressFunc);
