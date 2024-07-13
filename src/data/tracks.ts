@@ -5,7 +5,7 @@ const tracks:ITrack[] = [
         id: 1,
         title: {
             en: 'Guitar and Orchestra, No. 1',
-            ru: 'Гитара и Оркестр No 1',
+            ru: 'Гитара и Оркестр, No 1',
         },
         description: {
             en: 'A short piece with a climax towards the end of it. written in 2020',
@@ -19,7 +19,7 @@ const tracks:ITrack[] = [
         id: 2,
         title: {
             en: 'Guitar and Orchestra, No. 2',
-            ru: 'Гитара и Оркестр No 2',
+            ru: 'Гитара и Оркестр, No 2',
         },
         description: {
             en: 'Guitar tuned to Drop C, lots of emotion and bells',
@@ -47,7 +47,7 @@ const tracks:ITrack[] = [
         id: 4,
         title: {
             en: 'Guitar and Orchestra, No. 3',
-            ru: 'Гитара и Оркестр No 3',
+            ru: 'Гитара и Оркестр, No 3',
         },
         description: {
             en: 'A simple piece to relieve attention',
@@ -61,7 +61,7 @@ const tracks:ITrack[] = [
         id: 5,
         title: {
             en: 'Guitar and Orchestra, No. 4',
-            ru: 'Гитара и Оркестр No 4',
+            ru: 'Гитара и Оркестр, No 4',
         },
         description: {
             en: 'Free form of the piece with increasing and decreasing tension',

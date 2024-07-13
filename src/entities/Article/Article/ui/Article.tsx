@@ -33,7 +33,7 @@ export function Article({ className }: ArticleProps) {
         <div className={className}>
 
             <Typography className={cls.title} text={language ? article[language].greeting : ''} />
-            <div className={clsx(cls.text, 'plain_text_size')}>
+            <div className={clsx(cls.text, cls.article_text)}>
                 <Typography text={language ? article[language].parOne : ''} />
                 <Typography text={language ? article[language].parTwo : ''} />
                 <Typography text={language ? article[language].parThree : ''} />

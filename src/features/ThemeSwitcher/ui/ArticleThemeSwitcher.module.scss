@@ -10,5 +10,9 @@
 }
 
 .smaller{
-    padding: 5px;
+    padding: 7px;
+
+    @media screen and (width >= 768px) {
+        padding: 5px;
+    }
 }
