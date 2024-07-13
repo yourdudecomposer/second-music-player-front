@@ -9,7 +9,7 @@ const tracks:ITrack[] = [
         },
         description: {
             en: 'A short piece with a climax towards the end of it. written in 2020',
-            ru: 'Коротакая пьеса с кульминацией к концу произведения. написана в 2020',
+            ru: 'Коротакая пьеса с кульминацией к концу. Написана в 2020',
         },
         audio: '/guitar_and_orchestra_1.mp3',
         cover: '/cover.jpg',
