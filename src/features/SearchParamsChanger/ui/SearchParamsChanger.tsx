@@ -33,7 +33,7 @@ export function SearchParamsChanger() { // also here we define title
 
     useEffect(() => {
         if (currentTrack?.id && pathname === '/') {
-            document.title = `Guitar player${currentTrack.title[language || 'en'] ? ` - ${currentTrack.title[language || 'en']}` : ''}`;
+            document.title = `Guitar Player${currentTrack.title[language || 'en'] ? ` - ${currentTrack.title[language || 'en']}` : ''}`;
             router.replace(`?${createQueryString('trackId', currentTrack?.id.toString())}`, { scroll: false });
         }
     }, [createQueryString, currentTrack?.id, currentTrack?.title, language, pathname, router]);
