@@ -14,8 +14,8 @@ import Metrika from './Metrika';
 const inter = Nunito({ weight: ['400', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'guitar and orchestra',
-    description: 'guitar and orchestra music by goriainov filipp',
+    title: 'Guitar Player',
+    description: 'Music for Guitar and Orchestra by Goriainov Filipp',
 };
 
 export default function RootLayout({
