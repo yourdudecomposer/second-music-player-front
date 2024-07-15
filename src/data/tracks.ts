@@ -33,7 +33,7 @@ const tracks:ITrack[] = [
         id: 3,
         title: {
             en: 'Guitar, Duduk and Orchestra',
-            ru: 'Гитар, Дудук\nи Оркестр',
+            ru: 'Гитара, Дудук\nи Оркестр',
         },
         description: {
             en: 'I really like the sound of the duduk. Made it a solo.',

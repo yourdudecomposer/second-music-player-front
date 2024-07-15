@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { ArticleThemeProvider } from '@/features/ThemeSwitcher';
 import { InnerLayout } from '@/app/_InnerLayout';
 import { LanguageProvider } from '@/features/LanguageSwitcher';
+import Script from 'next/script';
 
 const inter = Nunito({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <html lang="en">
 
             <body className={`${inter.className}`}>
+                <Script src="./script.js" />
                 <div className={clsx('player_wrapper', 'player_purple')}>
                     <LanguageProvider>
                         <Player />
