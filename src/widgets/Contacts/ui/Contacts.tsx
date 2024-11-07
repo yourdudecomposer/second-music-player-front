@@ -15,7 +15,7 @@ export function Contacts({ className }: ContactsProps) {
         <div className={clsx(className, cls.div, 'plain_text_size')}>
             <a className={cls.mail_link} href="mailto:goriainovfilipp@yandex.ru">goriainovfilipp@yandex.ru</a>
             <div className={cls.social_wrapper}>
-                <SocialSvgWrapper href="https://www.youtube.com/@filippgoriainov6371" color="red">
+                <SocialSvgWrapper href="https://www.youtube.com/@filippgoriainov" color="red">
                     <Youtube />
                 </SocialSvgWrapper>
                 <SocialSvgWrapper className={cls.tg_moving} href="https://t.me/guitarandorchestra" color="#2aabee">
