@@ -23,7 +23,7 @@ const tracks:ITrack[] = [
         },
         description: {
             en: 'Guitar tuned to Drop C, lots of emotion and bells',
-            ru: 'Гитара настроена в Drop C, много эмоций и колокола',
+            ru: 'Гитара настроена в Drop C',
         },
         audio: '/guitar_and_orchestra_2.mp3',
         cover: '/cover.jpg',
@@ -37,7 +37,7 @@ const tracks:ITrack[] = [
         },
         description: {
             en: 'I really like the sound of the duduk. Made it a solo.',
-            ru: 'Очень понравилось как звучит дудук. Сделал его солирующим',
+            ru: '  Название говорит за себя',
         },
         audio: '/guitar_duduk_and_orchestra.mp3',
         cover: '/cover.jpg',
@@ -64,8 +64,8 @@ const tracks:ITrack[] = [
             ru: 'Гитара и Оркестр,\nNo 4',
         },
         description: {
-            en: 'Free form of the piece with increasing and decreasing tension',
-            ru: 'Свободная форма произведения с то нарастающим, то убывающим напряжением',
+            en: 'Another one',
+            ru: 'Еще одна',
         },
         audio: '/guitar_and_orchestra_4.mp3',
         cover: '/cover.jpg',
