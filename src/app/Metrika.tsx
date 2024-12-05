@@ -11,7 +11,7 @@ export default function Metrika() {
 
     useEffect(() => {
         const url = `${pathname}?${searchParams}`;
-        ym(process.env.YM_CODE, 'hit', url);
+        ym(97839372, 'hit', url);
     }, [pathname, searchParams]);
 
     return null;
