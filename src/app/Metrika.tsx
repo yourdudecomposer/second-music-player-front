@@ -5,15 +5,15 @@ import { usePathname, useSearchParams } from 'next/navigation';
 
 declare let ym: any;
 
-export default function Metrika() {
+export default function Metrika({ num }:{num:number}) {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
     useEffect(() => {
         const url = `${pathname}?${searchParams}`;
-        console.log('Metrika: ', process.env.YM_CODE);
+        console.log('Metrika: ', num);
 
-        ym(process.env.YM_CODE, 'hit', url);
+        ym(num, 'hit', url);
     }, [pathname, searchParams]);
 
     return null;

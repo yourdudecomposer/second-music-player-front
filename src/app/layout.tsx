@@ -44,7 +44,7 @@ export default function RootLayout({
               });`}
                 </Script>
                 <Suspense fallback={<></>}>
-                    <Metrika />
+                    <Metrika num={process.env.YM_CODE as unknown as number} />
                 </Suspense>
                 <div className={clsx('player_wrapper', 'player_purple')}>
                     <LanguageProvider>
