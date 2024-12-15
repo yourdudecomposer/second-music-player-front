@@ -9,9 +9,10 @@ export default function Metrika() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
-    console.log(process.env.YM_CODE);
     useEffect(() => {
         const url = `${pathname}?${searchParams}`;
+        console.log('Metrika: ', process.env.YM_CODE);
+
         ym(process.env.YM_CODE, 'hit', url);
     }, [pathname, searchParams]);
 
