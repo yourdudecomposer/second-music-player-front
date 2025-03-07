@@ -1,0 +1,44 @@
+.div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+
+    @media screen and (width >= 1024px) {
+        align-items: flex-end;
+
+
+    }
+
+    .mail_link{
+        text-decoration: none;
+        color: var(--contacts-color);
+    }
+
+    .social_wrapper{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        .tg_moving{
+            svg{
+                position: relative;
+                bottom: .6px;
+                right: .6px;
+            }
+        }
+
+        .spotify_icon_wrapper{
+            padding: 0;
+
+            svg{
+                background-color: white;
+                border-radius: 50%;
+            }
+        }
+
+    }
+
+
+}

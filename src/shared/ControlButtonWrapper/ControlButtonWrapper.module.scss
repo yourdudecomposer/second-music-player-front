@@ -1,0 +1,27 @@
+.button{
+    background-color: transparent;
+    border:none;
+    max-width: fit-content;
+    max-height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .05s;
+    font-size: 16px;
+
+    @media screen and (width >= 768px) {
+        font-size: 20px;
+    }
+
+    @media screen and (width >= 1024px) {
+        font-size: 18px;
+    }
+
+    &:active{
+        transform: scale(.9);
+
+    }
+
+    cursor: pointer;
+  
+}

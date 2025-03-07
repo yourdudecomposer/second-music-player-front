@@ -1,0 +1,18 @@
+.div{
+    width: 70%;
+    max-width: 450px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #dcdcdc;
+    background-color: #1B5948;
+    border-radius: 10px;
+    z-index: 1;
+    padding: 15px;
+
+    @media screen and (width >= 1024px) {
+        right: calc(30% + 20px);
+
+    }
+
+}

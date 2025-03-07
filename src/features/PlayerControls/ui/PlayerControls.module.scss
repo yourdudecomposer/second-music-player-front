@@ -1,0 +1,71 @@
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width: 100%;
+    align-items: center;
+    
+    @media screen and (width >= 768px) {
+        justify-content: space-between;
+
+    }
+
+    .center_wrapper{
+        width: 100%;
+        justify-content: space-evenly;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        max-width: 390px;
+
+        @media screen and (width >= 1024px) {
+            transform: scale(.8);
+
+        }
+    }
+    
+    .left_wrapper{
+        display: none;
+
+        @media screen and (width >= 768px) {
+            display: block;
+        }
+
+        @media screen and (width >= 768px) {
+            width: 22px;
+        }
+        
+        .tracklist_btn{
+            @media screen and (width >= 1024px) {
+                display: none;
+            }
+
+            svg{
+                width: 22px;
+            }
+        }
+    }
+    
+    .right_wrapper{
+        display: none;
+        position: relative;
+
+        .eq_btn{
+            position: absolute;
+            transform: translateX(calc(-100% - 20px));
+
+         
+        }
+
+        @media screen and (width >= 768px) {
+            display: flex;
+            align-items: center;
+            transform: scale(.8);
+        }
+
+        @media screen and (width >= 1024px) {
+            transform: scale(.7);
+
+        }
+    }
+}

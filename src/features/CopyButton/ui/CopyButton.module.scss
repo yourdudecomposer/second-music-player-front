@@ -1,0 +1,13 @@
+.button{
+    svg{
+        width: 30px;
+        stroke: var(--controls-not-active);
+        
+        &.active{
+            stroke: var(--controls-active);
+
+        }
+    }
+}
+
+

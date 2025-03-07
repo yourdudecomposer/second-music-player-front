@@ -1,0 +1,33 @@
+.div{
+    width: 100%;
+    max-width: 295px;
+    padding: 14px 28px;
+    box-shadow: 0 0 26px var(--floating-menu-shadow);
+    background-color: var(--background-player);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+
+}
+
+.fixed{
+    position: fixed;
+    bottom: 35px;
+    z-index: 2;
+}
+
+.placeholder{
+    display: none;
+}
+
+.placeholder_visible{
+    display: block;
+}
+    
+@media screen and (width >= 768px) {
+    .placeholder_none{
+        display: none;
+    }
+}

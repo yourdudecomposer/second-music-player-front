@@ -1,0 +1,17 @@
+.player_purple {
+    --background-player: #0A0716;
+    --controls-not-active:#dcdcdc;
+    --controls-not-active-85:#ffffffd9;
+    --controls-active:#4936CC;
+    --play-pause:#3415B0;
+    --play-pause-bg-color:#fff;
+    --floating-menu-shadow-old:#191235;
+    --floating-menu-shadow:#3a2e71;
+    --text-white:#fff;
+    --outline-button-color:#b300ff;
+    --player-text-color:#dcdcdc;
+    --track-item-border-bottom:#191235;
+    --player-bars:#1dd300;
+    --scroll:#868686;
+    --loader-second-color:#8686865e;
+}

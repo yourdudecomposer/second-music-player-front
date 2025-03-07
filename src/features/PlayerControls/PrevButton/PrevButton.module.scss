@@ -1,0 +1,13 @@
+
+
+.button{
+    width: 30px;
+    height: 30px;
+    
+    svg{
+        transform: rotate(180deg);
+        fill: var(--controls-not-active);
+        width: 30px;
+        height: 30px;
+    }
+}

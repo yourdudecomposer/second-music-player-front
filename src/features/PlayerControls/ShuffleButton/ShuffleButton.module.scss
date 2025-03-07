@@ -1,0 +1,22 @@
+.shuffle{
+    svg{
+        stroke: var(--controls-not-active);
+        width: 24px;
+
+        path:nth-child(3),
+        path:nth-child(5){
+            fill:  var(--controls-not-active);
+        }
+    }
+}
+
+.active{
+    svg{
+        stroke: var(--controls-active);
+
+        path:nth-child(3),
+        path:nth-child(5){
+            fill:  var(--controls-active);
+        }
+    }
+}

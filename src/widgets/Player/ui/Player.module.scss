@@ -1,0 +1,80 @@
+.wrapper {
+    --player-padding:35px;
+
+    @media screen and (width >= 768px) {
+        --player-padding:70px;
+    }
+    
+    @media screen and (width >= 1024px) {
+        --player-padding:35px;
+
+    }
+
+    min-height: 100svh;
+    width: 100%;
+    padding: var(--player-padding);
+    background-color: var(--background-player);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 -12px 20px 0 var(--player-text-color);
+
+
+
+    .player_top{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+        @media screen and (width >= 768px) {
+            gap: 20px;
+
+        }
+
+       
+    }
+
+    .player_bottom{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+        gap: 20px;
+
+        @media screen and (width >= 768px) {
+            gap: 25px;
+
+            .float_menu{
+                display: none;
+            }
+        
+            .timeline{
+                order: 2;
+            }
+            
+            .controls{
+                order:1 ;
+            
+            }
+        }
+
+        @media screen and (width >= 1024px) {
+            gap: 10px;
+
+        }
+
+    }
+
+    .tracklist{
+        @media screen and (width >= 1024px) {
+            display: none;
+        }
+    }
+}
+
+
